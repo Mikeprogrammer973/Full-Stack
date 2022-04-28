@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/vejo-teens.jpeg" type="image/x-icon">
+    <title>Confirm</title>
+<script>  
+/*
+var name = window.prompt("Qual o seu nome", "Digite o seu nome aqui...")
+var confirm = confirm(`${name}, seu nome tem ${name.length} letras? `)
+if(confirm !== true){
+    alert("Recarregue a página e, tente de novo!")
+}
+*/
+var nome = prompt("Qual o seu nome? ", "Digite o seu nome aqui...")
+alert(`${nome}, esse site tem conteúdo ocultos!`)
+var res = window.confirm(`Mesmo assim, deseja continuar ${nome}? `)
+if(res !== false){
+   document.write(`${nome}, clique <a href="https://mikeprogrammer973.github.io/daily_verses/" target="_blank" rel="external">aqui</a> para continuar!`)
+   
+}else{
+document.write(`Foi uma sábia decisão ${nome}!`)
+}
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>

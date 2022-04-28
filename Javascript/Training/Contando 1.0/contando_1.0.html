@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contando 1.0</title>
+    <style>
+    input{
+        text-align:center;
+        outline:none;
+    }
+    form{
+        width:500px;
+        margin:auto;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset><legend>Configurando</legend>
+        <p>De 0 a: <input type="number" id="fim" required/></p>
+        <p>Passo: <input type="number" id="passo" required/></p>
+        </fieldset>
+        <fieldset><legend>Contagem</legend>
+        <p id="contagem"></p>
+        </fieldset>
+        <input type="button" value="Contar" onclick="contar()" />
+    </form>
+    <script>
+        function contar() {
+            var fim = document.querySelector('#fim').value;
+            var passo = document.querySelector('#passo');
+            var p = Number(passo.value);
+            var contagem = document.querySelector('#contagem');
+            var c = 0;
+            contagem.innerHTML = " ";
+            while (c <= fim) {
+                contagem.innerHTML += `<strong>${c}</strong>  ->  `;
+                c += p;
+            }
+            contagem.innerHTML += "/<";
+        }
+    </script>
+</body>
+</html>

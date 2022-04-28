@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursividade</title>
+    <style>
+        #q{
+            width:100px;
+            height:100px;
+            background-color:azure;
+            box-shadow: 3px 3px 2px black;
+            margin: 50px auto auto auto;
+        }
+    </style>
+    <script>
+        function contador(min, max){
+            document.write(min + " <|> ");
+            if(min < max){
+                contador(min+2, max);
+            }
+        }
+        //contador(0, 50);
+
+        function fat(valor){
+            var f = valor;
+            if(valor > 1){
+                f *= fat(--valor);
+            }
+            return f;
+        }
+        //var num = prompt("Digite um número: ");
+        //var fat = fat(num);
+        //document.writeln("<br>O fatorial de " + num + " é " + fat + "!");
+    </script>
+</head>
+<body>
+    <div id="q"></div>
+
+    <script>  
+        var  obj = document.getElementById("q");
+        //obj.style.borderRadius = "50%";
+        var ang = 0;
+        var vel = Number(prompt("Velocidade: "));
+        var anima;
+        var status = 1;
+        function gira(){
+            obj.style.transform = "rotate("+ ang +"deg)";
+            ang += vel;
+            anima = requestAnimationFrame(gira);
+        }
+
+        obj.addEventListener("click", Onoff);
+        function Onoff(){
+            if(status == 1){
+                status = 0;
+                cancelAnimationFrame(anima);
+                obj.style.backgroundColor = "gray";
+            }else if(status == 0){
+                status = 1;
+                obj.style.backgroundColor = "lightgreen";
+                gira();
+            }
+        }
+        gira();
+    </script>
+</body>
+</html>

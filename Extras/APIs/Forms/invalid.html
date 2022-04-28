@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+	<script>
+		var idade;
+		function iniciar(){
+			idade = document.getElementById("idade");
+			idade.addEventListener("change", mudarRange, false);
+			document.registro.addEventListener("invalid", validar, true);
+			document.getElementById("sent").addEventListener("click", enviar, false);
+			document.registro.addEventListener("input", controlar, false);// Para validar em tempo real			
+		}
+		
+		function mudarRange(){
+			var saida = document.getElementById("range");
+			var calc = idade.value - 5;
+			if(calc < 5){
+				calc = 0;
+				idade.value = 5;
+			}
+			saida.innerHTML = calc + " a " + idade.value;
+		}
+		
+		function validar(e){
+			var el = e.target;
+			el.style.backgroundColor = "#FFDDDD";
+			//el.setCustomValidity("Preencha-o corretamente!");
+		}
+		
+		function controlar(e){// Validando em tempo real
+			var el = e.target;
+			if(el.validity.valid){
+				el.style.backgroundColor = "lightgreen";
+			}else{
+				el.style.backgroundColor = "#FFDDDD";
+			}
+		}
+		
+		function enviar(){
+			var valido = document.registro.checkValidity();
+			if(valido){
+				document.registro.submit();
+				alert("Sucesso!");
+			}
+		}
+		
+		window.addEventListener("load", iniciar, false);
+	</script>
+</head>
+<body>
+<section>
+    <form name="registro" id="registro" action="post"  autocomplete="on">
+		Usuário:
+        <input pattern="[A-Za-z]{3,}" maxlength="17" name="user" id="user" placeholder="Usuário.." title="Nome de Usuário com mínimo de 3 letras e com máximo de 17 letras, sem caráteres especiais e sem numéricos!" required><br>
+		E-mail:
+		<input type="email" name="email" id="email" placeholder="E-mail.." required><br>
+		Range Idade:
+		<input type="range" min="0" max="80" step="5" value="5" id="idade" name="idade">
+		<output id="range">0 a 5</output>
+		<br><input type="submit" value="Entrar" id="sent">
+    </form>
+</section>
+</body>
+</html>

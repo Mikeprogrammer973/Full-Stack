@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de idade</title>
+<style>  
+   body{
+       bacground-color:black;
+       margin:30px;
+   } 
+   main{
+       background-image:linear-gradient(to bottom, lightskyblue, white, transparent);
+       border-radius:20px 0px;
+   }
+   h1{
+       font: bold 3em display, serif;
+       border-radius:10px;
+       bacground-image:radial-gradient(circle, skyblue, lightblue);
+   }
+   p{
+       text-align:justify;
+       font: 560 1.5em display, monospace;
+   }
+</style>
+</head>
+<body>
+    <main>
+<h1>Annúncio IMPORTANTE!!!</h1>
+<p>Jesus te ama e, quer te salvar. Então venha a Ele, não demore não!!!</p>
+    </main>
+<script> 
+   var nome = window.prompt("Qual é o seu nome?") 
+   var idade = Number(window.prompt("Sua idade: "))
+   resposta = idade>=18?"seu acesso foi permitido!":"seu acesso a esse site foi negado, mas um favor te foi concedido. Então entre!"
+   confirm(`${nome}, ${resposta.toUpperCase()}`)
+</script>
+</body>
+</html>

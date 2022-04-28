@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+body{
+    background-color: rgba(211, 211, 211, 0.234);
+}
+#dv_jogo{
+    width: 700px;
+    height: 400px;
+    background-color: black;
+}
+#bola{
+    position: absolute;
+    top: 170px;
+    left: 320px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gray;
+}
+#player{
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    width: 15px;
+    height: 100px;
+    background-color: gray;
+}
+#cpu{
+    position: absolute;
+    top: 150px;
+    left: 680px;
+    width: 15px;
+    height: 100px;
+    background-color: gray;
+}
+#painel{
+    display: flex;
+    width: 300px;
+    background-image: linear-gradient(to right, darkgray, transparent);
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.item_painel{
+    display: flex;
+    margin: 10px;
+}
+input{    
+    text-align: center;
+    outline: none;
+}
+button{
+    outline: none;
+}

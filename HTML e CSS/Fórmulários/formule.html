@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script> 
+  function cal_total(){
+      var qtd = parseInt(document.querySelector('#cQtd').value);
+      tot = qtd * 1500;
+      document.querySelector('#cPt').value = tot;
+
+  }  
+</script>
+    <title>Fórmulários</title>
+<style>  
+    form{
+        width:500px;
+        margin:auto;
+        color:rgb(6, 160, 216);
+    }
+    input, textarea{
+        font-family:monospace;
+        outline:none;
+    }
+    input:hover, textarea:hover{
+        background-color:azure;
+    }
+    fieldset{
+        border: 2px solid rgba(6, 74, 89, 0.241);
+    }
+    #sexo{
+        width:150px;
+        border: 2px solid rgba(6, 74, 89, 0.141);
+    }
+    legend{
+        color:rgb(6, 125, 216);
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+<form method="post" name="form" id="fContato" action="maito:mikepascal.delta@gmail.com" oninput="cal_total();">  
+<fieldset id="usuario"> <legend>Identificação do Usuário </legend> 
+  <p><label for="cNome">Nome: </label> <input type="text" placeholder="Digite o seu nome..." size="20" maxlength="30" name="tNome" id="cNome"></p>
+  <p><label for="cSenha">Senha: </label> <input name="tSenha" id="cSenha" type="password" placeholder="Palavra-passe..."></p>
+  <p><label for="cEmail">E-mail: </label><input name="tEmail" id="cEmail" type="email" placeholder="E-mail..."></p>
+  <fieldset id="sexo"> <legend>Sexo</legend>
+     <input type="radio" name="sex" id="masc" checked>
+      <label for="masc">Masculino</label><br>
+<input type="radio" name="sex" id="fem">      
+      <label for="fem">Feminino</label>
+  </fieldset> 
+  <p><label for="cData">Data de Nascimento:</label> <input name="tData" id="cData" type="date"></p>
+</fieldset>
+<fieldset id="endereco"> <legend>Endereço do Usuário</legend>
+   <p><label for="cEn">Logradouro: </label> <input type="text" name="tEn" id="cEn" placeholder="Rua..."></p>
+   <p><label for="cNum">Número: </label> <input type="number" name="tNum" id="cNum" placeholder="Número da casa..."></p>
+   <p><label for="cEs">Estado: </label> <select name="tEs" id="cEs">
+<optgroup label="Região Sudeste">
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="SP">São Paulo</option>
+</optgroup>
+<optgroup label="Região Sul">
+    <option value="SC" selected>Santa Catarina</option>
+    <option value="PR">Paraná</option>
+</optgroup>
+   </select></p>
+   <p><label for="cCi">Cidade: </label><input type="text" name="tCi" id="cCi" placeholder="Cidade..." list="cidades"></p>
+<datalist id="cidades">  
+<option value="Rio de Janeiro"></option>
+<option value="Nova Iguaçu"></option>
+<option value="Niterói"></option>
+<option value="Belford Roxo"></option>
+</datalist>
+</fieldset>
+<fieldset id="mensagem"> <legend>Mensagem do Usuário</legend>
+    <p><label for="cGu">Grau de Urgência:</label> Mín.<input type="range" name="tGu" id="cGu" min="0" max="10" step="1">Máx.</p>
+    <p><label for="cMsg">Mensagem:</label> <textarea placeholder="Deixe aqui a sua mensagem..." name="tMsg" id="cMsg" cols="50" rows="7"></textarea></p>
+
+</fieldset>
+<fieldset id="pedir"> <legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tPed" id="cPed" checked><label for="cPed">Gostaria de adquirir um Googke Glass quando disponível!</label></p>
+    <p><label for="cCor">Cor: </label><input type="color" name="tCor" id="cCor" value="#12465f"></p>
+    <p><label for="cQtd">Quantidade: </label><input type="number" name="tQtd" id="cQtd" value="0" min="0" max="10"></p>
+    <p><label for="cPt">Preco Total: R$ </label><input type="text" placeholder="Total a pagar..." readonly name="tPt" id="cPt"</p>
+</fieldset>
+<input type="submit" value="Enviar"></input>
+</form>
+</body>
+</html>

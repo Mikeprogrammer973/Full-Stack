@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener</title>
+    <script>
+        
+        function ciao() {
+            alert("Ciao amico!");
+            var el = document.getElementById("div1");
+            el.style.left = "0px";
+            el.style.top = "0px";
+        }
+        function mover(el) {
+            el.style.left = Math.random() * 1000 + "px";
+            el.style.top = Math.random() * 450 + "px";
+        }
+        function cor() {
+            var el = document.getElementById("div1");
+            var r = Math.random() * 255;
+            var g = Math.random() * 255;
+            var b = Math.random() * 255;
+            el.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
+        }
+
+        // Inicialização dos eventos
+        function events() {
+            var el = document.getElementById("div1");
+            el.addEventListener("click", ciao);
+            el.addEventListener("mouseenter", function (event) {
+                mover(el);
+            });
+            el.addEventListener("mouseout", cor);
+        }
+        window.addEventListener("load", events);
+    </script>
+    <style>
+        #div1 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid lightblue;
+            background-color: azure;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

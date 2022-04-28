@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta namw="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Super Contador</title>
+        <link rel="stylesheet" href="style.css">
+<style>   
+   input{
+       display:block;
+       margin-top:5px;
+       margin-bottom:10px;
+outline:none;
+box-shadow: 3px 3px 5px 2px rgb(0, 0, 0, 0.128);
+border:none;
+text-align:center;
+   }
+#button{
+margin:20px;
+box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.328);
+padding:5px;
+width:100px;
+} 
+   div{
+       margin:10px;
+       padding:10px;
+   }
+</style>
+    </head>
+    <body>
+        <header>
+            <h1>Vamos contar</h1>
+        </header>
+        <section>
+            <div>
+Início: <input type="number" name="init" id="init"></input>
+Fim: <input type="number" name="fim" id="fim"></input>
+Passo: <input type="number" name="passo" id="passo"></input>
+<input type="button" value="Contar" onclick="contar()" id="button"></input>
+            </div>
+            <div id="res">
+              Preparando contagem...  
+            </div>
+        </section>
+        <footer>
+            <p>&copy; Mike Dervensky Pascal</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+    </html>

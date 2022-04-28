@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funções</title>
+    <script>
+
+        
+        var notas = new Array(10, 4, 6, 5.6, 5, 7.9, 10, 6.7, 10);
+
+        function media(nums) {
+            var somanotas = 0;
+            for (var c = 0; c < nums.length; c++) {
+               somanotas += nums[c];
+            }
+            var media = somanotas / nums.length;
+            return media;
+        }
+
+        var media = media(notas);
+
+        document.write("Media: " + media.toFixed(2));
+
+        
+        function soma2(v1, v2) {//Com retorno
+            var res = v1 + v2;
+            return res;
+        }
+
+        var result = soma2(4, 3);
+
+        document.write("<br>Soma: " + result);
+       
+       
+        function nome(nome) {//Com arg de entrada
+            document.write("<br>Your name is " + nome + "!");
+        }
+
+        var n = prompt("Digite o seu nome: ");
+        nome(n);
+       
+
+       
+        function ciao() {//simples
+            document.write("<br>Ciao Mundi!");
+        }
+
+        ciao();
+        
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+
+    </script>
+</body>
+</html>

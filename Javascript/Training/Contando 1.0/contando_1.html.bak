@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+</style>
+</head>
+<body>
+<p>De 0 até: <input type="number" id="fim"></p>
+<p><button onclick="contar()">Contar</button></p>
+<div id="contar">Configurando contagem...</div>
+<script>
+function contar(){
+var txtfim = document.querySelector('#fim').value;
+var fim = Number(txtfim.value);
+var contar = document.querySelector('#contar');
+var c;
+for(c = 0; c >= fim; c++){
+document.write(c);
+}
+}
+
+</script>
+</body>
+</html>

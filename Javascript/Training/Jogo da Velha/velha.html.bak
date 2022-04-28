@@ -1,0 +1,204 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">	
+    <title>Jogo da Velha</title>
+    <style>
+		body{
+			background-color: #21D4EB;
+			font-family: monospace;
+		}
+        #dvjogo{
+            width: 160px;
+            height: 160px;
+            display: flex;
+            flex-wrap : wrap;   
+            align-content: flex-start; 			
+        }
+        .posGame{
+            width: 50px;
+            height: 50px;
+            margin: 0px; 
+            padding: 0px;
+            cursor: pointer;
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;			
+        }
+        #p1{
+            border-top: none;
+            border-left: none;
+        }
+        #p2{
+            border-top: none;
+        }
+        #p3{
+            border-top: none;
+            border-right: none;
+        }
+        #p4{
+            border-left: none;
+        }
+        #p6{
+            border-right: none;
+        }
+        #p7{
+            border-left: none;
+            border-bottom: none;
+        }
+        #p8{
+            border-bottom: none;
+        }
+        #p9{
+            border-bottom: none;
+            border-right: none;
+        }
+		table{
+			margin-top: 0px;
+			border-collapse: collapse;
+			width: 200px;
+			height: 50px;
+			text-align: center;
+			vertical-align: middle;
+		}
+		#table{			
+			margin-left: 100px;
+			background-color: white;
+		}
+		th,td{
+			padding: 5px;
+			border: 1px solid black;
+		}
+		caption{
+			background-color: green;
+			color: white;
+			padding: 5px;
+		}
+		header{
+			background-color: #0F606B;
+			padding: 20px;
+		}
+		h1{
+			font-size: 2em;
+			text-align: center;
+			color: lightblue;
+			text-decoration: underline dotted;
+		}
+		main{
+			background-color: #B0E7EE;
+			display: flex;
+            flex-wrap : wrap;
+			padding: 20px;
+			margin: auto;
+			
+		}
+		section{
+			margin-left: 10px;
+			margin-top: 30px;
+		}
+		#game{
+			margin-left: 100px;
+		}
+		footer{
+			background-color: #0F606B;
+			height: 81px;
+		}
+		#stop, #set{
+			padding: 5px;
+			width: 100px;
+			background-color: #c6eff3;
+			color: #0F606B;
+			font-weight: bold;
+			outline: none;
+		}
+		#level, #vs{
+			width: 170px;
+			outline: none;
+			font-variant: small-caps;
+		}
+		#quem_comeca{
+			font-weight: bold;
+			color: #0F606B;
+		}
+		nav{
+			width: 600px;
+			height: 100px;
+			margin: auto;
+			background-color: #0F606B;
+			display: none;
+		}
+		#anounce{
+			width: 590px;
+			height: 95px;
+			background-color: white;
+			color: #0F606B;
+			font-size: 2em;
+			font-weight: bolder;
+			text-align: center;
+			padding-top: 20px;
+			margin: auto;
+		}
+    </style>    
+</head>
+<body>
+<header><h1>Jogo da Velha</h1></header>
+<nav id="an_e"><p id="anounce"></p></nav>
+	<main>
+	<section>
+		<p><input id="stop" type="button" value="Parar" onclick="parar()"></p>
+		<p>Nível: <select id="level">
+				<option id="1">Fácil</option>
+				<option id="2">Intermediário</option>
+				<option id="3" selected>Diffícil</option>
+				</select></p>
+				<p>Opção: <select id="vs">
+				<option id="p_c" selected>Player vs CPU</option>
+				<option id="p_p">Player 1 vs Player 2</option>
+				</select></p>
+				<p><input id="set" type="button" value="Definir" onclick="config()"></p>
+				</section>
+		<section id="game">
+		<div id="dvmenu">
+			<p id="quem_comeca">Quem Joga: </p>
+			<button onclick="iniciar()" style="display: none;">Iniciar Jogo</button>
+		</div>
+		<br>		
+		<div id="dvjogo">
+			<div id="p1" class="posGame" onclick="jogar(0,0)"></div>
+			<div id="p2" class="posGame" onclick="jogar(0,1)"></div>
+			<div id="p3" class="posGame" onclick="jogar(0,2)"></div>
+			<div id="p4" class="posGame" onclick="jogar(1,0)"></div>
+			<div id="p5" class="posGame" onclick="jogar(1,1)"></div>
+			<div id="p6" class="posGame" onclick="jogar(1,2)"></div>
+			<div id="p7" class="posGame" onclick="jogar(2,0)"></div>
+			<div id="p8" class="posGame" onclick="jogar(2,1)"></div>
+			<div id="p9" class="posGame" onclick="jogar(2,2)"></div>
+		</div>
+		</section>
+		<section>
+		<table id="table">
+			<caption>Score</caption>
+			<thead>
+				<tr>
+					<th id="p_1">Jogador</th>
+					<th id="p_2">CPU</th>
+				</tr>
+			</thead>
+			<tboby>
+				<tr>
+					<td id="score_player">0</td>
+					<td id="score_cpu">0</td>
+				</tr>
+			</tboby>
+		</table>
+			</section>
+	</main>
+	<footer></footer>
+	<script src="velha.js"></script>
+</body>
+</html>

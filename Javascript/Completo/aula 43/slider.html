@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        #slider{
+            width: 300px;
+            height: 300px;
+            border: 2px groove black;
+            box-shadow: 3px 3px 2px black;
+            background-position: center center;
+            background-size: 300px 300px;
+        }
+	audio{
+	    height: 10px;
+	    outline: none;
+	}
+        button{
+            font-size:2em;
+	    font-family:monospace;
+	    border-radius: 20px;
+	    margin-top: 20px;
+            padding: 5px;
+            outline: none;
+        }
+	
+    </style>
+    <script>  
+        var imgs = [];
+        var slider;
+        var imgAtual;
+        var maxImg;
+
+        function preLoad(){
+            for(var c = 0; c < 19; c++){
+                var m = c + 1;
+            imgs[c] = new Image();
+            imgs[c].src = "./imgs/m" + m + ".png";
+            }
+        }
+
+        function loadImg(img){
+           slider.style.backgroundImage = "url('"+imgs[img].src+"')";
+        }
+
+        function iniciar(){
+            preLoad();           
+            maxImg = imgs.length-1;
+            imagAtual = 0; //Math.round(Math.random()*maxImg);
+            slider = document.getElementById("slider");
+            document.getElementById("prev").addEventListener("click", trocaPrev);
+            document.getElementById("next").addEventListener("click", trocaNext);
+            loadImg(imagAtual);
+        }
+
+        function trocaNext(){ 
+            imagAtual++;
+
+            if(imagAtual > maxImg){
+                imagAtual = 0;
+            }
+            loadImg(imagAtual);
+                        
+        }
+
+        function trocaPrev(){ 
+            imagAtual--;
+
+            if(imagAtual < 0){
+                imagAtual = maxImg;
+            }
+            loadImg(imagAtual);
+            
+        }
+
+        setInterval(trocaNext, 7000);
+        window.addEventListener("load", iniciar);
+    </script>
+</head>
+<body>
+    <div id="slider">
+	<audio src="Einaudi_ Nuvole Bianche_50k.mp3" controls autoplay loop>
+    </div>
+   <button id="prev">Previous</button>
+    <button id="next">Next</button>
+</body>
+</html>

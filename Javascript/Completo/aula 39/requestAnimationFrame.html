@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta  charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>requestAnimationFrame</title>
+	<style>
+	#player{
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	width: 50px;
+	height: 50px;
+	background-color: azure;
+	border: none;
+	box-shadow: 3px 3px 2px black;
+	}
+	</style>
+	<script>
+	
+	var player;
+	var vel;
+	var dx;
+	var dy;
+	var px;
+	var py;
+	var anima;
+	var status;
+	
+	function iniciar(){
+	vel = Number(prompt("Velocidade: ", "Velocidade em px"));
+	dx = 1;
+	dy = 1;
+	px = 0;
+	py = 0;
+	status = 1;
+	
+	player = document.getElementById("player");
+	
+	document.getElementById("init").addEventListener("click", function(){
+	//if(status == 0){
+	status = 1;
+	game();
+	//}
+	});
+	
+	document.getElementById("stop").addEventListener("click", function(){
+	status = 0;
+	cancelAnimationFrame(anima);
+	player.style.backgroundColor = "gray";
+	
+	});
+	
+	player.addEventListener("click", function(event){
+	
+	if(status == 1){
+	status = 0;
+	cancelAnimationFrame(anima);
+	player.style.backgroundColor = "gray";
+	}else if(status == 0){
+	status = 1;
+	player.style.backgroundColor = "green";
+	game();
+	}
+	
+	});
+	
+	game();
+	
+	}
+	
+	function game(){
+	var r = Math.round(Math.random() * 255);
+	var g = Math.round(Math.random() * 255);
+	var b = Math.round(Math.random() * 255);
+	player.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+	px += dx * vel;
+	py += dy * vel;
+	player.style.left = px + "px";
+	player.style.top = py + "px";
+	if(px > 900){
+	dx = -1;
+	}else if(px <= 0){
+	dx = 1;
+	}
+	if(py > 400){
+	dy = -1;
+	}else if(py <= 0){
+	dy = 1;
+	}
+	anima = requestAnimationFrame(game);
+	}
+	
+	window.addEventListener("load", iniciar);
+	
+	</script>
+</head>
+<body>
+<div id="player"></div>
+<button id="init">Iniciar</button>
+<button id="stop">Parar</button>
+</body>
+</html>

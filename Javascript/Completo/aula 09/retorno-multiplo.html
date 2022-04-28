@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/vejo-teens.jpeg" type="image/x-icon">
+    <title>IF com retorno múltiplo</title>
+<style>  
+   #yes{
+       color:green;
+   } 
+   #quase{
+       color:skyblue;
+   }
+   #no{
+       color:red;
+   }
+</style>
+<script>  
+    var prof = prompt("Bem-vindo ao Imagine! Qual o seu nome? ");
+    var imagine = window.alert(prof + ", imagine-se um professor! Imangine-se dando fechando a média final dos alunos.");
+    var aluno = prompt("Nome do aluno(a): ");
+    var nota = prompt("Média final do(a) " + aluno + ":");
+    var res = document.querySelector('#res');
+    if(nota > 10 || nota < 0){
+        alert("Professor(a) " + prof + ", essa nota é inválida! Só aceitamos de 0 até 10!");
+    }else{
+        if(nota >= 7){
+            if(nota >=9){
+                if(nota == 10){
+                    alert(aluno + " está  APROVADO(A) COM EXELÊNCIA!");
+                    document.write(aluno + " está <strong id='yes'> APROVADO(A) COM EXELÊNCIA</strong>!")  
+                }else{
+                alert(aluno + " está SUPER APROVADO(A)!");
+                document.write(aluno + " está <strong id='yes'> SUPER APROVADO(A)</strong>!")
+                }
+            }else{
+                alert(aluno + " está aprovado(a)!");
+                document.write(aluno + " está <strong id='yes'>aprovado(a)</strong>!")
+            }
+        }else if(nota >= 6){
+            alert(aluno + " está em recuperação!");
+            document.write(aluno + " está em <strong id='quase'>recuperacão</strong>!");
+        }else{
+            if(nota < 4){
+                if(nota == 0){
+                    alert(aluno + " está REPROVADO(A) COM EXELÊNCIA!");
+                    document.write(aluno + " está <strong id='no'>REPROVADO(A) COM EXELÊNCIA</strong>!");   
+                }else{
+                alert(aluno + " está MEGA REPROVADO(A)!");
+                document.write(aluno + " está <strong id='no'>MEGA REPROVADO(A)</strong>!");
+                }
+            }else{
+                alert(aluno + " está reprovado(a)!");
+                document.write(aluno + " está <strong id='no'>reprovado(a)</strong>!");
+            }
+        }
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

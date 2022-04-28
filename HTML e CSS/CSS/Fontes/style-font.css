@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@font-face{
+    font-family: 'Mike';
+    src: url('fonts/MorrisRomanBlack.ttf') format('truetype');
+    /*
+    Tipos de formatos():
+    -opentype (otf)
+    -truetype (ttf)
+    -embedded-opentype
+    -truetype-aat (apple advanced typograghy)
+    -svg
+
+    */
+    font-weight:normal;
+    font-style:normal;
+
+}
+body{
+    font: 1em sans-serif;
+}
+h1, h2{
+    font-family: 'Mike', algerian, serif;
+}

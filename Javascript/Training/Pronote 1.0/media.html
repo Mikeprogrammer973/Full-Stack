@@ -1,0 +1,125 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronote</title>
+<style> 
+    *{
+        font-family:monospace;
+    }
+    main{
+        position: relative;
+        margin:5px;
+        padding:10px;
+    } 
+    main h1{
+        background-image: linear-gradient(to right, gray, lightgray, transparent);
+        font-size:3em;
+        text-align:center;
+        padding:10px;
+        margin:10px 10px 30px 10px;
+        border-radius:30px;
+    }
+   input{
+       position: relative;
+       left:10%;
+       display:block;
+       margin:10px;
+       padding:5px;
+       text-align:center;
+       outline:none;
+       border:none;
+       border-radius:20px;
+       box-shadow:5px 5px 7px rgb(0, 0, 0, 0.589);
+       background-color:azure;
+   } 
+   input:hover{
+       background-color:whitesmoke;
+   }
+   #calcul{
+       position: relative;
+       left:12%;
+       margin-top:15px;
+      
+   }
+   #calcul:hover{
+    background-color:lightskyblue;
+   }
+   p{
+       position: relative;
+       left:5%;
+   }
+   #show{
+       font-size:1.5em;
+       position:absolute;
+       width:300px;
+       height:200px;
+       line-height:30px;
+       padding: 20px;
+       box-shadow:3px 3px 7px rgb(0, 0, 0, 0.739);
+       border-radius:15px;
+       top:20%;
+       left:50%;
+   }
+   .yes{
+       color:green;
+   }
+   .no{
+       color:red;
+   }
+   .quase{
+       color:skyblue;
+   }
+</style>
+</head>
+<body>
+    <main id="principal"> 
+<h1>Pronote</h1>
+        <p>Aluno(a):</p> <input type="text" name="" id="aluno"> 
+        <p>Nota 1:</p> <input type="number" name="" id="n1">       
+        <p>Nota 2: </p><input type="number" name="" id="n2">
+        <p>Nota 3: </p><input type="number" name="" id="n3">
+        <p>Nota 4:</p> <input type="number" name="" id="n4">
+        <p>Nota 5:</p> <input type="number" name="" id="n5">
+                <input type="button" value="Calcular média" id="calcul" onclick="calcular()"> 
+    <div id="show">       
+      Média:  
+    </div>
+        <script>
+            alert("Bem-vindo ao Pronote!")
+            var user = prompt("Digite o seu nome de usuário: ")
+            var c = confirm("Pronto para começar?!")
+            if(c !== true){
+               principal.innerHTML = `${user}, infelizmente você não está pronto para usar o Pronote.` 
+            }
+            function calcular(){
+                var txtaluno = document.getElementById('aluno')
+                var aluno = String(txtaluno.value)
+                var txn1 = document.getElementById('n1')
+                var nota1 = Number(txn1.value)
+                var txn2 = document.getElementById('n2')
+                var nota2 = Number(txn2.value)
+                var txn3 = document.getElementById('n3')
+                var nota3 = Number(txn3.value)
+                var txn4 = document.getElementById('n4')
+                var nota4 = Number(txn4.value)
+                var txn5 = document.getElementById('n5')
+                var nota5 = Number(txn5.value)
+                var media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5
+                if(media >= 7 || media == 10){
+                   show.innerHTML = `Média: <strong class="yes">${media.toFixed(2)}</strong><br>Aluno(a) <strong class="yes">${aluno}</strong> está <strong class="yes">aprovado(a)</strong>!` 
+
+                }else{
+                    if(media >= 6 && media < 7){
+                        show.innerHTML = `Média: <strong class="quase">${media.toFixed(2)}</strong><br>Aluno(a) <strong class="quase">${aluno}</strong> está <strong class="quase">em recuperação</strong>!`
+                    }else{
+                        show.innerHTML = `Média: <strong class="no">${media.toFixed(2)}</strong><br>Aluno(a) <strong class="no">${aluno}</strong> está <strong class="no">reprovado(a)</strong>!` 
+                    }
+                }
+
+            }
+        </script>
+</body>
+</html>

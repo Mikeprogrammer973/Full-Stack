@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Manipulando Atributos HTML com JavaScript</title>
+      <script>
+        function trocaImg(i){
+            var obj = document.getElementById("img");
+            obj.setAttribute("class", `img${i}`);
+        }   
+
+        function removeImg(){
+            var obj = document.getElementById("img");
+            obj.removeAttribute("class");
+        }    
+
+        function verify(){
+            if(document.getElementById("img").hasAttribute("class")){
+                alert("Atributo 'class' está na tag!");
+            }else{
+                alert("Atributo 'class' não está na tag!");
+            }
+        }
+    </script> 
+</head>
+<body>
+    <button  onclick="trocaImg(1)">Imagem 1</button>
+    <button  onclick="trocaImg(2)">Imagem 2</button>
+    <button  onclick="trocaImg(3)">Imagem 3</button>
+    <button  onclick="removeImg()">Remover Imagem</button>
+    <button  onclick="verify()">Verificar</button>
+    <div id="img"></div>     
+</body>
+</html>

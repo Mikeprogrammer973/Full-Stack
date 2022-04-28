@@ -1,0 +1,27 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando</title>
+<style> 
+    body{
+        font: italic bold 2em monospace, sans-serif;
+    }
+    strong{
+        color:lightblue;
+    }
+</style>
+</head>
+<body>
+<script> 
+ var nome = window.prompt("Qual é o seu nome?") 
+ document.writeln(`Olá <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.<br>`)  
+ document.writeln(`Seu nome em maíusculo é <q><em>${nome.toUpperCase()}</em></q><br>`)
+ document.writeln(`E o seu nome em minúsculo é <q><em>${nome.toLowerCase()}</em></q><br>`)
+ var n1 = 12056.75
+ document.write( `E...${nome}, o seu salário anual é de ${n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}!`)
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos</title>
+    <script>
+
+        function ola(){
+            var dt = new Date();
+            var hora = dt.getHours();
+
+            if (hora >= 6 && hora <= 12) {
+                alert("Ciao, Buongiorno!");
+            } else if (hora >= 13 && hora <= 18) {
+                alert("Ciao, Buonassera!");
+            } else if (hora >= 19 && hora <= 23) {
+                alert("Ciao, Buonanotte!");
+            } else {
+                alert("Woooow, it´s time to sleep!");
+            }
+        }
+        function mudaCor(obj, cor) {
+            obj.style.backgroundColor = cor;
+        }
+        function Cor() {
+            var obj = document.getElementById("div1");
+            var r = (Math.random() * 255);
+            var g = (Math.random() * 255);
+            var b = (Math.random() * 255);
+            var color = `rgb(${r}, ${g}, ${b})`;
+            mudaCor(obj, color);
+        }
+        function entrar() {
+            var obj = document.getElementById("div1");
+            var r = (Math.random() * 255);
+            var g = (Math.random() * 255);
+            var b = (Math.random() * 255);
+            var color = `rgb(${r}, ${g}, ${b})`;
+            mudaCor(obj, color);
+        }
+        function sair() {
+            var obj = document.getElementById("div1");
+            var r = (Math.random() * 255);
+            var g = (Math.random() * 255);
+            var b = (Math.random() * 255);
+            var color = `rgb(${r}, ${g}, ${b})`;
+            mudaCor(obj, color);
+        }
+        function mudaPos(obj) {
+            obj.style.position = "absolute";
+            obj.style.left = Math.random() * 500 + "px";
+            obj.style.top = Math.random() * 500 + "px";
+        }
+    </script>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 2px solid lightblue;
+        }
+    </style>
+</head>
+<body onload="ola()">
+    <div id="div1" onmouseenter="entrar()" onmouseout="sair()" onclick="mudaPos(document.getElementById('btn'))"></div>
+    <br />
+    <button id="btn" onmouseover="Cor()" onclick="mudaPos(document.getElementById('div1'))">Clique em mim</button>
+    <script>
+    </script>
+</body>
+</html>

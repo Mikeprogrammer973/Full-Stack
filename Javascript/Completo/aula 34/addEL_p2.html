@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener parte 2</title>
+    <script>
+
+        alert("Clique no quadrado para ativar o keydown!");
+
+        var px = 0;
+        var py = 0;
+
+        function move() {
+
+            var obj = document.getElementById("div1");
+            var tecla = event.keyCode;
+            var r = Math.random() * 255;
+            var g = Math.random() * 255;
+            var b = Math.random() * 255;
+            // 37 => seta p/ esquerda - 38 => seta p/ cima - 39 => seta p/ direita - 40 => seta p/ baixo
+
+            if (tecla == 37) {
+                px -= 10;
+                obj.style.left = px + "px";
+            } else if (tecla == 38) {
+                py -= 10;
+                obj.style.top = py + "px";
+            } else if (tecla == 39) {
+                px += 10;
+                obj.style.left = px + "px";
+            } else if (tecla == 40) {
+                py += 10;
+                obj.style.top = py + "px";
+            } else if (tecla == 13) {
+                alert("Evento keydown destivado!");
+                document.removeEventListener("keydown", move);
+                obj.style.backgroundColor = `whitesmoke`;
+            }
+
+            switch (tecla) {
+                case 37:
+                case 38:
+                case 39:
+                case 40:
+                    obj.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            }
+        }
+
+        function ativar() {
+            alert("Evento keydown ativado! Aperte 'Enter' para desativá-lo.");
+            document.getElementById("div1").style.backgroundColor = `rgb(64, 234, 96)`;
+            Event();
+            }
+
+        function Event() {
+                document.addEventListener("keydown", move);
+            }
+
+        function iniciar() {
+            document.getElementById("div1").addEventListener("click", ativar);
+        }
+
+        window.addEventListener("load", iniciar);
+        
+        
+    </script>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background-color:whitesmoke;
+            border:none;
+            box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.345);
+            position: absolute;
+            top:0px;
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

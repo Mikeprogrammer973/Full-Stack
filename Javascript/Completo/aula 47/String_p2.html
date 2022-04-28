@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulção de String parte 2</title>
+</head>
+<body>
+   <p id="txt">Web Hacker Cursos - Curso de JavaScript</p>
+    <script>
+        var txt = document.getElementById("txt").innerHTML;
+        var txt2 = " - Aula 46 do curso de javaScript";
+
+        //var result = txt.search(/curso/i);
+        //var result = txt.replace(/curso/ig, "aula");
+        //var result = txt.charAt(7);
+        //var result = txt.charCodeAt(7);
+        //var result = fromCharCode(67);
+
+        var result = txt.concat(txt2 + " - Manipulação de Strings");
+        document.getElementById("txt").innerHTML = result;
+        //document.write("Pesquisa: " + result);
+    </script> 
+</body>
+</html>

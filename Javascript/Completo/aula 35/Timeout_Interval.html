@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../favicon/vejo-teens.jpeg" type="image/x-icon">
+    <title>setTimeout - setInterval</title>
+    <style>
+        div#dv1{
+            width: 200px;
+            height: 200px;
+            background-color: floralwhite;
+            border: none;
+            box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.345);
+        }
+        #init, #stop{
+            padding: 10px;
+            outline: none;
+            background-image: linear-gradient(to bottom, darkgray, black);
+            color: white;
+            border-radius: 50%;
+            margin: 10px;
+
+        }
+        #init{
+            margin-left: 40px;
+        }
+    </style>
+    <script>
+
+        window.addEventListener("load", evento);
+
+        var tempo;
+
+        function cor() {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+
+            document.getElementById("dv1").style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            document.body.style.backgroundColor = "white";
+            
+        }
+
+        function intervalo() {
+
+            //setTimeout(cor, 1000);
+            tempo = setInterval(cor, 1000);
+
+            document.body.style.backgroundColor = "white";
+
+            document.getElementById("init").style.backgroundImage = "linear-gradient(to bottom, whitesmoke, white)";
+            document.getElementById("init").style.color = "black";
+            document.getElementById("stop").style.color = "black";
+            document.getElementById("stop").style.backgroundImage = "linear-gradient(to bottom, darkgray, black)";
+        }
+
+        function parar() {
+ 
+            clearInterval(tempo);
+
+            document.body.style.backgroundColor = "black";
+
+            document.getElementById("init").style.backgroundImage = "linear-gradient(to bottom, darkgray, black)";
+            document.getElementById("init").style.color = "black";
+            document.getElementById("stop").style.color = "black";
+            document.getElementById("stop").style.backgroundImage = "linear-gradient(to bottom, whitesmoke, white)";
+        }
+
+        function evento() {
+            document.getElementById("init").addEventListener("click", intervalo);
+            document.getElementById("stop").addEventListener("click", parar);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="dv1"></div>
+    <br />
+    <button id="init">On</button>
+    <button id="stop">Off</button>
+</body>
+</html>

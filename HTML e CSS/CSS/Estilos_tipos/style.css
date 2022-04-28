@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body{
+    background-color:hsl(203, 92%, 75%);
+    font-family:algerian;
+    font-size:15px;
+    background-image:linear-gradient( rgb(129, 168, 201), rgb(162, 0, 255) , rgb(50, 192, 211), rgb(42, 101, 211), rgb(55, 45, 201), rgb(25, 10, 238), rgb(162, 0, 255));
+}
+h1{
+    color:darkblue;
+    background-color:white;
+}
+h2{
+    color:white;
+    background-color:black;
+}
+p{
+    text-align:left;
+}

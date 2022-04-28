@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop WHILE</title>
+<script>  
+    var num, cont;
+
+    //Forma tradicional
+    num = 0;
+    while(num <= 10){
+        document.write("Glória a Deus!<hr>");
+        num++;
+
+    }
+
+    //Forma simplificada
+    document.write("<br><br>");
+    num = 10;
+    cont = 0;
+    while(num--){
+        document.write(cont + "<hr>");
+        cont++;
+
+    }
+    
+    //Forma complexa
+    document.write("<br><br>");
+    num = true;
+    cont = 0;
+    while(num){
+        document.write(cont + "<hr>");
+        cont++;
+        if(cont > 10){
+            num = false;
+        }
+
+    }
+   
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener parte 2</title>
+    <script>
+        document.addEventListener("keydown", function (event) {
+            var obj = document.getElementById("div1");
+            var tecla = event.keyCode;
+            // 37 => seta p/ esquerda
+        })
+    </script>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background-color:aqua;
+            border:none;
+            box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.345);
+            position: absolute;
+            top:0px;
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas API</title>
+	<script>		
+		function iniciar(){
+			var el = document.getElementById("lenco");
+			lenco = el.getContext('2d');
+			
+			lenco.fillStyle = "#000099";
+			lenco.strokeStyle = "#990000";
+			
+			lenco.strokeRect(100, 100, 120, 120);
+			lenco.fillRect(110, 110, 100, 100);
+			lenco.clearRect(120, 120, 80, 80);
+		}
+		
+		window.addEventListener("load", iniciar, false);
+	</script>
+</head>
+<body>
+<section>
+    <canvas id="lenco" width="500" height="300">
+		Seu navegador não suporta o elemento canvas!
+	</canvas>
+</section>
+</body>
+</html>

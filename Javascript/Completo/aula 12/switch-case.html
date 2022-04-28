@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/vejo-teens.jpeg" type="image/x-icon">
+    <title>Switch Case</title>
+<style>  
+    *{
+        font-family:monospace;
+        font-size: 1.5em;
+    }
+    #ouro{
+        color:yellow;
+    }
+    #prata{
+        color:gray;
+    }
+    #bronze{
+        color:brown;
+    }
+    #nenhum{
+        color:red;
+    }
+    #bom{
+        color:green;
+    }
+    #mal{
+        color:darkred;
+    }
+</style>
+    <script> 
+       var sorte = prompt("Digite um valor: ", "Digite um numero entre -270 e 270...");
+       var pos;
+       if(sorte >= 20 && sorte <= 40 || sorte <= -20 && sorte >= -40){
+           pos = 3;
+       }else if(sorte >= 70 && sorte <= 100 || sorte <= -70 && sorte >= -100){
+           pos = 2;
+       }else if(sorte >= 240 && sorte <= 270 || sorte <= -240 && sorte >= -270){
+           pos = 1;
+       }
+       switch(pos){
+           case 1:
+                alert("O seu número está no 1° lugar do pódio!");
+                document.write("N° : " + sorte + "<br>Premio: <strong id='ouro'>Medalha de Ouro</strong>");
+                break;
+           case 2:
+                alert("O seu número está no 2° lugar do pódio!");
+                document.write("N° : " + sorte + "<br>Premio: <strong id='prata'>Medalha de Prata</strong>");
+                break;
+           case 3:
+                alert("O seu número está no 3° lugar do pódio!");
+                document.write("N° : " + sorte + "<br>Premio: <strong id='bronze'>Medalha de Bronze</strong>");
+                break;
+           default:
+                alert("O seu número está fora do pódio!");
+                document.write("N° : " + sorte + "<br>Premio: <strong id='nenhum'>Nenhum</strong>");
+       }
+       switch(pos){
+           case 1:
+           case 2:
+           case 3:
+            document.write("<br><br><strong id='bom'>Hmmm...esse N° é dos bons!</strong>");
+            break;
+           default:
+            document.write("<br><br>Hmmm...esse N° é realmente <strong id='mal'>duvidoso</strong>!")
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulção de String parte 1</title>
+</head>
+<body>
+   <p ID="txt">Web Hacker Cursos - Curso de JavaScript - Aula 46 do curso de javaScript</p>
+    <script>
+        var txt = document.getElementById("txt").innerHTML;
+
+        //var result = txt.match(/[oa]/gi);// Pesquisando 'o' e 'a'
+        //var result = txt.match(/[^oa]/gi);// Pesquisando todo , menos 'o' e 'a'
+        //var result = txt.match(/[a-m]/gi);// Pesquisando todos os caráteres entre 'a' e 'm'
+        //var result = txt.match(/[^a-m]/gi);// Pesquisando todos os caráteres, menos aqueles que estão entre 'a' e 'm'
+        //var result = txt.match(/[a|r|o]/gi);// Pesquisando  'a' , 'r' e 'o'
+        var result = txt.match(/\W/gi);// Usando metacaráteres
+
+
+        document.write("Pesquisa: " + result + "<br>Ocorências: " + result.length);
+    </script> 
+</body>
+</html>

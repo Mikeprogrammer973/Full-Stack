@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DoM</title>
+<style>  
+   body{
+       background-image: linear-gradient(to right, lightskyblue, transparent);
+   } 
+   h1{
+       background-image: linear-gradient(to left, black, gray);
+       color:white;
+       text-align:center;
+       margin:5px;
+       padding:10px;
+       border-radius:30px;
+   }
+   p{
+       font: normal 1.5em monospace;
+       text-align:center;
+       margin:10px;
+       padding:10px;
+   }
+   div{
+       background-color: azure;
+       width:300px;
+       height:300px;
+       text-align:center;
+       margin:auto;
+       padding:20px;
+       border-radius:20px;
+   }
+   div strong{
+       color:darkred;
+   }
+</style>
+</head>
+<body>
+<h1>Iniciando estudos DOM</h1>
+<p>Aqui vai o resultado</p>
+<p>Aprendendo a trabalhar com <strong>DOM</strong> em JvaScript</p>
+<div id="msg">
+  <strong>Clique em mim</strong>  
+</div>
+<script>
+var corpo = document.body
+var p1 = document.getElementsByTagName('p')[1]
+/*
+var d = document.getElementById('msg')
+d.style.background='lightblue'
+//d.innerText='The love box'
+window.document.getElementById('msg').innerText="I´m waiting you..."
+*/
+/*
+d = document.getElementsByName('msg')[0]
+d.innerText='Ça roule mon pote!!!'
+*/
+d = document.querySelector('div#msg')
+d.innerText='Orange'
+</script>
+</body>
+</html>

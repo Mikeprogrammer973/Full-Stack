@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+<style>  
+  body{
+background-image: linear-gradient(to right, lightgreen, transparent);
+  }  
+  #arena{
+      width:300px;
+      height:200px;
+      text-align:center;
+      font: bold 2em monospace, sans-serif;
+      color:blue;
+      background-color:lightskyblue;
+      border-radius:17px;
+      margin:auto;
+      line-height:200px;
+  }
+
+</style>
+</head>
+<body>
+<div id="arena" <!--onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"--> 
+  Interaja... 
+</div>
+<script>
+    var a = document.querySelector('#arena')
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', sair)
+
+    function clicar(){
+        document.getElementById('arena').innerHTML="Clicou!"
+        document.getElementById('arena').style.background='green'
+    }
+    function entrar(){
+     document.querySelector('#arena').innerText="Interangindo..."
+     document.getElementById('arena').style.background='azure'
+    }
+    function sair(){
+        document.getElementById('arena').innerText="Saiu!"
+        document.getElementById('arena').style.background='lightskyblue'
+    }
+</script>
+</body>
+</html>

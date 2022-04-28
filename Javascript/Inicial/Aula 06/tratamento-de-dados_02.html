@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de dados</title>
+    <style>
+        body{
+            background-color: black; 
+        }
+        main{
+            max-width:900px;
+            min-width:300px;
+            background-color: azure; 
+            font: 600 2em monospace, sans-serif;
+            margin:auto;
+            padding:40px;
+            border-radius:10px;
+        }
+        main p{
+            text-align:justify;
+        }
+        h1{
+            text-align:center;
+            background-image:linear-gradient(to right, lightskyblue, transparent);
+            padding:10px;
+            border-radius:20px;~
+            text-shadow: 5px 5px 10px black;
+            box-shadow: inset 5px 5px 20px black;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição!</p>
+    </main>
+    <script>
+   var n1 = Number(prompt('Digite um número: '))//String
+   var n2 = Number(prompt('Digite outro número: '))//String
+   var s = n1 + n2
+  /* alert('A soma dos valores é ' + s)*///Concatenação
+   //(number+number) Adição
+   //(string+string) Concatenação
+   alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)//Template String
+    </script> 
+</body>
+</html>

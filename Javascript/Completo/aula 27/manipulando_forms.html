@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando Formul�rios com JavaScript</title>
+    <script>
+
+    </script>
+    <style>
+        input[type=submit]{
+            padding:5px;
+            text-align:center;
+            outline:none;
+            background-color:lightgreen;
+        }
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form name="cc1" id="c1" action="#" method="post">
+        <p>
+            <label for="nome">Nome: </label>
+            <input type="text" name="cnome" id="nome" placeholder="Primeiro..." value="JavaScript" readonly />
+        </p>
+        <p>
+            <label>Senha: </label>
+            <input type="password" name="cpass" id="pass" value="123098" readonly />
+        </p>
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+    </form>
+    <form name="cc2" id="c2" action="#" method="post">
+        <p>
+            <label for="nome">Nome: </label>
+            <input type="text" name="cnome" id="nome" placeholder="Primeiro..." value="JavaScript" readonly />
+        </p>
+        <p>
+            <label>Senha: </label>
+            <input type="password" name="cpass" id="pass" value="12647829" readonly />
+        </p>
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+    </form>
+    <hr />
+    <script>
+        //var fm = document.forms.item(0).id;
+        //var fm = document.forms.namedItem("c2").innerHTML;
+        var fm = document.forms;
+        var fme = fm.elements;
+
+        for (var i = 0; i < fm.length; i++) {
+            var fme = fm[i].elements;
+
+            fm[i].style.width = "500px";
+            fm[i].style.margin = "10px auto 10px auto";
+            fm[i].style.border = "2px groove lightskyblue";
+            fm[i].style.padding = "20px";
+            fm[i].style.boxShadow = "1px 1px 1px skyblue";
+            for (var c = 0; c < fme.length; c++) {
+                fme[c].style.textAlign = "center";
+                fme[c].style.backgroundColor = "azure";
+                fme[c].style.border = "none";
+                fme[c].style.boxShadow = "3px 3px 5px rgb(0, 0, 0, 0.345)";
+                fme[c].style.padding = "10px";
+            }
+        }
+        for (var m = 0; m < fm.length; m++) {
+            var fme = fm[m].elements;
+       
+        for (var v = fme.length - 1; v < fme.length; v++) {
+            fme[v].style.width = "100px";
+            fme[v].style.marginLeft = "80px";
+            fme[v].style.backgroundColor = "lightgreen";
+            fme[v].style.border = "2px groove lightblue";
+            fme[v].style.boxShadow = "0px 0px 0px black";
+            }
+        }
+
+        
+        fme = fm[0].elements;
+
+        fme[1].value = "teamoprincipessa1506forever973";
+        fme[0].value = "Curso de JavaScript";
+        
+        fme = fm[1].elements;
+
+        fme[1].value = "odiatamoexcrucior1506010405";
+        fme[0].value = "Curso de Csharp";
+
+
+        for (var t = 0; t < fm.length; t++) {
+            fme = fm[t].elements;
+            var e = t;
+            switch (t) {
+                case 0:
+                    e = 1;
+                    break;
+                case 1:
+                    e = 2;
+            }
+            for (var p = fme.length - 2; p < fme.length-1; p++) {
+              document.writeln("Senha " + e + ": " + fme[p].value + "<br>");
+            }
+            }
+            
+       
+        
+    </script>
+</body>
+</html>

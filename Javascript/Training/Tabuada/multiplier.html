@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta namw="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabuada</title>
+        <link rel="stylesheet" href="style.css">
+<style>    
+  input{
+      outline:none;
+      border:none;
+      box-shadow: 5px 5px 3px rgb(0, 0, 0, 0.156);
+      background-color:whitesmoke;
+      text-align:center;
+  }  
+</style>
+    </head>
+    <body>
+        <header>
+            <h1>Tabuada</h1>
+        </header>
+        <section>
+            <div>
+Tabuada: <input type="number" name="tabnumber" id="tabnumber"></input>
+<input type="button" value="Gerar tabuada" onclick="mostrar()"></input>
+            </div>
+            <div>
+<select name="xtable"  id="table" size="10">
+<option>Digite um número acima!</option>
+</select>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; Mike Dervensky Pascal</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+    </html>

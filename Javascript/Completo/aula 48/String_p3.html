@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulção de String parte 3</title>
+</head>
+<body>
+   <p id="txt">Web Hacker Cursos - Curso de JavaScript</p>
+    <script>
+        var txt = document.getElementById("txt").innerHTML;
+        var letter = "C";
+        var txt_2 = txt + " !";
+        //var result = txt.indexOf(letter);
+        //var result = txt.lastIndexOf(letter);
+        /*var result = txt.localeCompare(txt_2);
+        
+        if(result == 0){
+            document.write("Strings iguais!");
+        }else{
+            document.write("Strings diferentes!");
+        }*/
+        //var result = txt.slice(txt.search("J"), txt.search("t")+1);
+        //var result = txt.split(" ");
+        //var result = txt.substr(txt.search("C")+1, 5);
+        //var result = txt.toLowerCase();
+        var result = txt.toUpperCase().substr(txt.search("J"), txt.search("t")+1);
+        document.write("Resultado: " + result);
+    </script> 
+</body>
+</html>

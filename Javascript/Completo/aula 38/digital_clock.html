@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relógio digital funcional</title>
+<style>
+#rel{
+padding: 5px;
+width: 257px;
+text-align: center;
+font-family: monospace;
+font-size: 2em;
+background-color: azure;
+box-shadow: inset 10px 20px 30px skyblue;
+color: blue;
+border: none;
+box-shadow: 3px 3px 5px skyblue;
+}
+#data{
+display: inline;
+padding: 5px;
+text-align: left;
+font-family: monospace;
+font-size: 1em;
+background-color: azure;
+box-shadow: inset 10px 20px 10px skyblue;
+color: blue;
+border: none;
+}
+</style>
+<script>
+
+function relogio(){
+var dt = new Date();
+var h = dt.getHours();
+var m = dt.getMinutes();
+    var s = dt.getSeconds();
+    //var ms = dt.getMilliseconds();
+
+var data = dt.getDate();
+var diaSem = new Array("Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado");
+var month = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
+var ano = dt.getFullYear();
+
+var re = document.getElementById("rel");
+
+if(h < 10){
+hora = "0" + h;
+}
+if(m < 10){
+m = "0" + m;
+}
+if(s < 10){
+s = "0" + s;
+}
+/*
+    if (ms < 1000) {
+        ms = "0" + ms;
+        if (ms < 100) {
+            ms = "00" + ms;
+            if (ms < 10) {
+                ms = "000" + ms;
+            }
+        }
+    }
+*/
+
+re.value = h + ":" + m + ":" + s;
+document.getElementById("data").innerHTML = diaSem[dt.getDay()] + ", " + data + " de " + month[dt.getMonth()] + " de " + ano;
+}
+
+setInterval(relogio, 1);
+
+
+window.addEventListener("load", relogio);
+</script>
+</head>
+<body>
+<p id="data"></p>
+<br>
+<input type="text" id="rel">
+</body>
+</html>

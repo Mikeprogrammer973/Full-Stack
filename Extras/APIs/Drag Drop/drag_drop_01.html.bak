@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Drag and Drop</title>
+ <link rel="stylesheet" href="drag_drop_01.css">
+ <script src="drag_drop_01.js"></script>
+</head>
+<body>
+ <section id="soltar">
+ Arraste e solte a imagem aqui
+ </section>
+ <section id="imgs">
+ <img id="imagen" src="desenho.png">
+ </section>
+</body>
+</html>

@@ -1,0 +1,10 @@
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.csproj.AssemblyReference.cache
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.F_main.resources
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.Properties.Resources.resources
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.csproj.GenerateResource.cache
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.csproj.CoreCompileInputs.cache
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.exe
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\obj\Debug\aula61.pdb
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\bin\Debug\aula61.exe.config
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\bin\Debug\aula61.exe
+C:\Users\Thaise\Desktop\Full Stack\Back-end\Exercícios\C#\Aula61\aula61\bin\Debug\aula61.pdb

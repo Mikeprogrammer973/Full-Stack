@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+	<nav>		
+        <!--Tipo search-->
+		<input type="search" name="busca" id="busca" placeholder="Digite a sua pesquisa..." autofocus form="formulario"><br>         
+	</nav>
+<section>
+    <form name="formulario" id="formulario" action="post"  autocomplete="on">
+        <input type="text" name="nome" id="nome" placeholder="Digite o seu nome..."><br>
+        <!--Tipo url-->
+        <input type="url" name="meu_url" id="meu_url" placeholder="Digite a sua URL..."> <br>
+        <!--Tipo tel-->
+        <input type="tel" name="telefone" id="telefone" placeholder="+55 (47) 99667-6941"><br>
+        <!--Tipo range-->
+        <input type="range" name="config" id="config" min="0" max="20" step="2"><br>
+        <!--Tipo date-->
+        <input type="date" name="data" id="data"><br>
+        <!--Tipo week-->
+        <input type="week" name="semana" id="semana"><br>
+        <!--Tipo month-->
+        <input type="month" name="mes" id="mes"><br>
+        <!--Tipo time-->
+        <input type="time" name="hora" id="hora"><br>
+        <!--Tipo datetime-->
+        <input type="datetime" name="data_hora" id="data_hora"><br>
+        <!--Tipo datetime-local-->
+        <input type="datetime-local" name="data_hora_local" id="data-hora_local"><br>
+        <!--Tipo color-->
+        <input type="color" name="minha_cor" id="minha_cor" value="#079CA6"><br>		
+		<!--Atributo pattern-->
+		<input pattern="[0-9]{5}" name="code_postal" id="code_postal" title="Insere os 5 dígitos do seu código postal" placeholder="Código Postal..."><br>
+        <!--elemento datalist-->
+		<datalist id="info">
+			<option value="(47) 76894-9857" label="Mike´s Contact">
+			<option value="(11) 56092-6789" label="Priscilla´s Contact">
+		</datalist>
+		<input type="tel" id="telefone" name="telefone" list="info">
+		<br><input type="submit" value="Enviar">
+    </form>
+</section>
+</body>
+</html>

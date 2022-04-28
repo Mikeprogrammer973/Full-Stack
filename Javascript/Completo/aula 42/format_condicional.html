@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatação Condicional</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+        td, th{
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+    <script> 
+        
+    </script>
+</head>
+<body>
+<table id="table">
+    <thead>
+        <tr>
+            <th>Alunos</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Resultado</th>
+        </tr>
+     </thead>
+    <tbody>
+        <tr>
+            <td>Maria</td>
+            <td>7</td>
+            <td>8</td>
+            <td id="n1">13</td>
+        </tr>
+        <tr>
+            <td>Paulo</td>
+            <td>6</td>
+            <td>5</td>
+            <td id="n2">11</td>
+        </tr>
+        <tr>
+            <td>Jão</td>
+            <td>6.5</td>
+            <td>6.9</td>
+            <td id="n3">12</td>
+        </tr>
+        <tr>
+            <td>Mike</td>
+            <td>10</td>
+            <td>7</td>
+            <td id="n4">17</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+
+        var tabela = document.getElementById("table");
+        var media;
+
+        for(var c = 1; c < tabela.rows.length; c++){
+           media = (parseFloat(tabela.rows[c].cells[1].innerHTML) + parseFloat(tabela.rows[c].cells[2].innerHTML)) / 2;
+           tabela.rows[c].cells[3].innerHTML = media;
+        }
+
+        var notas = [];
+
+        for(var c = 0; c < 4; c++){
+            var n = c + 1;
+            notas[c] = document.getElementById(`n${n}`).innerHTML;
+        }
+        
+        for(var c = 0; c < notas.length; c++){
+            var n = c + 1;
+            if(notas[c] >= 7){
+                document.getElementById(`n${n}`).style.color = "green";
+            }else if(notas[c] >= 6){
+                 document.getElementById(`n${n}`).style.color = "blue";
+            }else{
+                 document.getElementById(`n${n}`).style.color = "red";
+            }
+        }
+</script>
+</body>
+</html>

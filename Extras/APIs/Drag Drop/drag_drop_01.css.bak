@@ -1,0 +1,17 @@
+#soltar{
+ float: left;
+ width: 500px;
+ height: 300px;
+ margin: 10px;
+ border: 1px solid #999999;
+}
+#imgs{
+ float: left;
+ width: 320px;
+ margin: 10px;
+ border: 1px solid #999999;
+}
+#imgs > img{
+ float: left;
+ width: 300px;
+ p

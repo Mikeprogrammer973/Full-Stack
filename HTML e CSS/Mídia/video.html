@@ -1,0 +1,32 @@
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo em HTML5</title>
+</head>
+<body>
+<h1>inserindo vídeos hospedados localmente</h1>
+<p>este vídeo está hospedado no meu próprio servidor.</p>
+<video src="./video/Maranata _ Avivah (Feat. Fernanda Madaloni).mp4" autoplay loop preload="metadata" controls width="500"></video>
+<!--Para melhor compatibilidade, é recomendado colocar todos os formatos
+possíveis, pois cada navegador tem seu formato, assim como no aúdio-->
+<br>
+<br>
+<br>
+<!--Esse tag gasta muito dinheiro quando botar num site-->
+<video width="500" poster="./imagens/chama-pura.jpg" preload="metadata" loop controls autoplay>
+<!--Mas como eu não baixei o Handbreak ainda eu só vou colocar num formato,
+mas depois eu arrumarei certinho-->
+<source src="./video/Caminho no deserto Soraya Moraes CANTADO Legendado.mp4" width="300" type="video/mp4">
+<p>Infelizmente seu navegador não consegue ler vídeos. Clique <a href="./video/Caminho no deserto Soraya Moraes CANTADO Legendado.mp4" target="_blank" rel="external" download="./video/Caminho no deserto Soraya Moraes CANTADO Legendado.mp4" type="video/mp4">aqui</a> para baixar</p>
+</video>
+<h1>Inserindo vídeos do Youtube</h1>
+<!--Esse tag é mais econômico pois não consume dado do seu servidor, mas sim do youtube-->
+<!--Sem internet, não consigo inserir as informações agora-->
+<iframe src="" frameborder="0"></iframe>
+<h1>Inserindo vídeo do Vimeo</h1>
+
+</body>
+</html>

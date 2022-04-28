@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições part 1</title>
+<style> 
+  body{
+      background-color: lightgray;
+  }  
+  h1{
+      text-align:center;
+      color:white;
+      background-image:linear-gradient(to right, black, transparent);
+  }
+  #txtvel{
+      text-align:center;
+      outline:none;
+      border-radius:30px;
+      border:none;
+      box-shadow:5px 5px 7px rgb(0, 0, 0, 0.377);
+  }
+  #verify{
+      border:none;
+      border-radius:20px;
+      background-color:darkgray;
+      color:white;
+      outline:none;
+  }
+  #verify:hover{
+      background-color:black;
+  }
+  #res{
+      margin-top:30px;
+      width:600px;
+      height:300px;
+      boder:none;
+      border-radius:30px;
+      box-shadow:3px 3px 5px rgb(0, 0, 0, 0.278);
+      padding:10px;
+      text-align:left;
+      line-height:100px;
+  }
+  .yes{
+      color:green;
+  }
+  .no{
+      color:red;
+  }
+  #caution{
+      font-family:monospace;
+      color: black;
+  }
+</style>
+</head>
+<body>
+<h1>Sistema de Multas</h1>
+Velocidade do carro: <input type="number" name="vel" id="txtvel">
+<input type="button" value="Verificar" id="verify" onclick="verificar ()">
+<div id="res"></div>
+<script> 
+  
+  function verificar(){
+   var txtv = (document.getElementById('txtvel'))
+   var vel = Number(txtv.value)
+   var res = document.getElementById('res') 
+    if(vel>=70){
+        res.innerHTML = `A sua velocidade atual é de <strong class="no">${vel}</strong> km/h. <strong class="no">MULTADO</strong>!<br>`
+
+    }else{
+        res.innerHTML = `A sua velocidade atual é de <strong class="yes">${vel}</strong> km/h. <strong  class="yes">Está no limite certo</strong>!`
+    }
+    res.innerHTML += `<br><strong id="caution">Dirija sempre com o cinto de segurança.</strong>`
+  }
+  
+  
+
+</script>
+</body>
+</html>

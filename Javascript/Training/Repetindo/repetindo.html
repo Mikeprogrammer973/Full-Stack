@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetindo</title>
+<script>
+    function rep(){
+    var texto = document.querySelector('#ctext');
+    var rep = document.querySelector('#crep');
+    var r = Number(rep.value);
+    var cont; 
+    res.innerHTML = " ";
+    for(cont = 1; cont <= r; cont++){
+        res.innerHTML += (texto.value) + "<br>";
+    }
+}
+</script>
+<style>
+    body{
+        font: 650 1.2em monospace;
+        padding:10px;
+    }
+    input{
+        outline:none;
+        border:none;
+        box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.356);
+        padding:10px;
+        background-color:azure;
+        text-align:center;
+    }
+    textarea{
+        outline:none;
+        border: 1px solid rgb(0, 0, 0, 0.156);
+        box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.556);
+        padding:10px;
+        background-color:azure;
+        margin-bottom: 20px;
+    }
+    textarea:hover, input:hover{
+        background-color:whitesmoke;
+    }
+    #but{
+        padding:5px;
+        margin:10px;
+        width:100px;
+        background-color:black;
+        color:white;
+        font-family:monospace;
+    }
+    #res{
+        background-color:lightgreen;
+        padding:20px;
+    }
+    #res:hover{
+        background-color:green;
+        color:white;
+    }
+    h1{
+        font: 650 2em monospace;
+        text-align:center;
+        background-image: linear-gradient(to right, lightgray, transparent);
+        padding:10px;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Repetindo</h1>
+<p>Texto:</p> <textarea name="text" id="ctext" cols="50" rows="5"></textarea><br>
+Repetir: <input type="number" name="rep" id="crep"></input> vezes
+<br>
+<input id="but" type="button" value="Repetir" onclick="rep()"></input>
+<hr>
+<div id="res"></div>
+<hr>
+</body>
+</html>
