@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Window</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #painel{
+            width: 700px;
+            height: 70px;
+            border: 2px groove teal;
+            padding: 10px;
+            border-radius: 5px 0px;
+            box-shadow: 3px 3px 5px azure;
+            background-color: teal;
+            color: white;
+            margin-bottom: 30px;
+        }
+        #btn_tam, #btn_rolar{
+            display: none;
+        }
+        iframe{
+            border: 3px groove teal;
+            box-shadow: 2px 2px 2px azure;
+            background-color: black;
+        }
+    </style>
+    <script>
+        /*function OW_p2(){
+            painel = document.getElementById("painel");
+            
+            w = window.innerWidth;// outerWidth -> largura externa
+            h = window.innerHeight;// outerHeight -> altura externa
+            px = window.screenX;
+            py = window.screenY;
+            }
+            
+            function info(){
+                OW_p2();
+                painel.innerHTML = `Largura interna: ${w}</br>Altura interna: ${h}<br><br>Posição X = ${px}<br>Posição Y = ${py}`;
+            }
+
+            function rolar(){
+                window.scrollBy(17, 670);
+            }*/
+             function inicia(){
+                document.getElementById("painel").innerHTML = "Qtd. Frames: " + window.length;
+
+                for(var c = 0; c < window.length; c++){
+                    window.frames[c].location = "p2.html";
+                }
+             }
+    </script>
+</head>
+<body onload="inicia()">
+    <button id="btn_tam" onclick="info()">Tamanho</button>
+    <button  id="btn_rolar" onclick="rolar()">Rolar</button>
+    <div id="painel"></div>
+
+    <iframe src="" frameborder="0"></iframe>
+    <iframe src="" frameborder="0"></iframe>
+    <iframe src="" frameborder="0"></iframe>
+</body>
+</html>

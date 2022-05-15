@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Navigator</title>
+<style>
+    #painel{
+        /*border: 2px solid navy;*/
+        width: 500px;
+        height: 400px;
+        box-shadow: inset 2px 3px 0px 10px teal;
+        border-radius: 10px 0px;
+        padding: 20px;
+    }
+</style>
+<script>
+    var painel;
+
+    function localizar(pos){
+        var c = pos.coords;
+        painel.innerHTML += "<hr>Localização: Latitude: " + c.latitude + " | Longitude: " + c.longitude;
+    }
+
+    function erro(){
+        painel.innerHTML += "<hr>Localização: Não foi possível obter a sua localização!";
+    }
+
+    function verifica(){
+        painel = document.getElementById("painel");
+
+        painel.innerHTML = "Navegador: " + navigator.appName;
+        painel.innerHTML += "<hr> Versão: " + navigator.appVersion;
+        painel.innerHTML += "<hr>Cookies Abilitados: " + navigator.cookieEnabled;
+        navigator.geolocation.getCurrentPosition(localizar, erro);
+        painel.innerHTML += "<hr>Idioma: " + navigator.language;
+        var idiomas = navigator.languages;
+        painel.innerHTML += "<hr>Idioma Disponíveis: ";
+        for(var i = 0; i < idiomas.length; i++){           
+            painel.innerHTML += " | " + idiomas[i] + " | ";
+        }  
+        painel.innerHTML += "<hr>Online: " + navigator.onLine; 
+        painel.innerHTML += "<hr>Sistema Operacional: " + navigator.platform;   
+        painel.innerHTML += "<hr>Engine: " + navigator.product;   
+    }
+    
+    window.addEventListener("load", verifica);
+</script>
+</head>
+<body>
+    <div id="painel"></div>
+</body>
+</html>
