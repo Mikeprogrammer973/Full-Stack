@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Screen</title>
+    <script>
+        var painel;
+
+        function iniciar(){
+            painel = document.getElementById("painel");
+
+            painel.innerHTML += "Resolução: " + screen.width + "px X " + screen.height + "px<hr>";
+            painel.innerHTML += "Resolução Disponível: " + screen.availWidth + "px X " + screen.availHeight + "px<hr>";
+            painel.innerHTML += "Profundidade Cores (Imagens): " + screen.colorDepth + "bits<hr>";
+            painel.innerHTML += "Resolução Cor Tela (pixel): " + screen.pixelDepth + "bits/px<hr>";
+        }
+
+        window.addEventListener("load", iniciar);
+    </script>
+    <style>
+            #painel{
+                /*border: 2px solid navy;*/
+                width: 500px;
+                height: 400px;
+                box-shadow: inset 2px 3px 0px 7px teal;
+                border-radius: 10px 0px;
+                padding: 20px;
+            }
+    </style>
+</head>
+<body>
+    <div id="painel"></div>
+</body>
+</html>
