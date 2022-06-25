@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Location</title>
+    <style>
+        body{
+            background-color: white;
+            color: black;
+            font: 2em monospace;
+        }
+        a{
+            color: black;
+        }
+    </style>
+    <script>
+        var aux = location.hash;
+        var dados = aux.split("#");
+
+        for(var d = 1; d < dados.length; d++){
+            document.write(dados[d] + "<br>");
+        }
+
+        document.write(location.hostname);//Hostname
+        //document.write(location.href = "http://projects/Sites/Pronote%203.0/homepage.php?info_gerencia=update&code=maria_db&tipo=adm");
+        document.write(location.origin);//Protocolo, Hostname, Porta
+        document.write("<br>" + location.pathname);//Caminho
+        document.write("<br>" + location.port);//Porta
+        document.write("<br>" + location.protocol);//Protocolo
+
+        document.write("<br>" + location.search.split("=")[1]);
+
+        document.write("<hr>");
+
+    </script>
+</head>
+<body>
+    <h1>Página 2 <p>Aula 68 - Part.2</p></h1>
+    <a href="Location_p1.html">Home</a>
+</body>
+</html>
