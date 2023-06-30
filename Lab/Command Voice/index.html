@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Voice</title>
+</head>
+<body>
+    <p id="output"></p>
+    <script>
+        const output_area = document.getElementById('output')
+        const recognition = new webkitSpeechRecognition()
+        recognition.interimResults = true
+        recognition.lang = "pt-BR"
+        recognition.continuous = true
+        recognition.start()
+
+        recognition.onresult = function(event){
+            for(let i = event.resultIndex; i < event.results.length; i++){
+                if(event.results[i].isFinal){
+                    const contents = event.results[i][0].transcript.trim()
+                    output_area.textContent = contents
+                }
+            }
+        }
+    </script>
+</body>
+</html>
