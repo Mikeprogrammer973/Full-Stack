@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <style>
+        form, body > div{
+            max-width: 900px;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 2px 2px 2px rgb(0, 0, 0. 0.325);
+            border-radius: 2vw;
+            background-color: lightgray;
+        }
+        form > *{
+            outline-color: gray;
+            margin: 5px;
+        }
+        body > div{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .pessoa{
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 2px rgb(0, 0, 0. 0.325);
+            border-radius: 2vw;
+            padding: 20px;
+            color: dimgray;
+            font-size: 1.3em;
+            margin: 10px;
+        }
+        .pessoa > *{
+            padding: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="f-add">
+        <input type="text" placeholder="Nome" id="nome" required>
+        <input type="number" id="idade" placeholder="Idade" required>
+        <button>Adicionar</button>
+    </form>
+    <div id="people">
+
+    </div>
+    <script src="./part_1.js"></script>
+</body>
+</html>
