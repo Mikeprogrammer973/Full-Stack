@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+    <style>
+        #cars, #f-carros{
+            margin: 0px auto;
+            width:80%;
+            border-radius: 2vw;
+            box-shadow: 2px 2px 2px rgb(0,0,0,0.352);
+            background-color: lightgrey;
+            padding: 20px;
+        }
+        #f-carros{
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        #f-carros > p{
+            margin: 0px;
+            padding: 10px;
+        }
+        .op-ml{
+            display: none;
+        }
+        #f-carros > p > *{
+            outline-color: gray;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+        button{
+            width: 179px;
+            margin-top: 10px;
+            color: green;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: white;
+        }
+        #cars{
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .car{
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 2px rgb(0, 0, 0. 0.325);
+            border-radius: 2vw;
+            padding: 20px;
+            color: dimgray;
+            font-size: 1.3em;
+            margin: 10px;
+        }
+        .car > *{
+            padding: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="f-carros">
+        <p>
+            <input type="radio" name="tipo" id="normal" checked>
+            <label for="normal">Normal</label>
+            <input type="radio" name="tipo" id="militar">
+            <label for="militar">Militar</label>
+        </p>
+        <p>
+            <input type="text" name="" id="nome" placeholder="Nome" required>
+        </p>
+        <p>
+            <input type="number" name="" id="portas" placeholder="Qtd. portas" required>
+        </p>
+        <p class="op-ml">
+            <input type="number" value="0" id="blindg" placeholder="Qtd. blindagem" required>
+        </p>
+        <p class="op-ml">
+            <input type="number" value="0" id="balas" placeholder="Qtd. munição" required>
+        </p>
+        <p>
+            <button>Adicionar</button>
+        </p>
+    </form>
+    <div id="cars">
+    
+    </div>
+    <script src="heranca.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 class Carro{// classe pai
+    tipo = "01"
     constructor(nome, doors){
         this.nome = nome
         this.doors = doors
@@ -18,6 +19,7 @@ class Carro{// classe pai
 }
 
 class Militar extends Carro{
+    tipo = "02"
     constructor(nome, doors, blindagem, municao){
         super(nome, doors)
         this.blindagem = blindagem
@@ -32,12 +34,56 @@ class Militar extends Carro{
     }
 }
 
-//const car_n = new Carro("Mustang X", 6)
-//console.log(car_n)
+const tipos = document.getElementsByName("tipo")
+let tipo
 
-const car_m = new Militar("Mustang XKiller", 6, 100, 7)
+tipos.forEach((t, i)=>{
+    t.addEventListener("change", ()=>{
+        if(t.value == "on" && i == 0){
+            [...document.querySelectorAll(".op-ml")].forEach((op)=>{
+                op.children[0].value = 0
+                op.style.display = "none"
+            })
+            tipo = false
+        }else if(t.value == "on" && i == 1){
+            [...document.querySelectorAll(".op-ml")].forEach((op)=>{
+                op.children[0].value = ""
+                op.style.display = "block"
+            })
+            tipo = true
+        }
+    })
+})
 
-car_m.atirar()
+let cars = []
+const add_car = ()=>{
+    let container_cars = document.getElementById("cars")
+    container_cars.innerHTML = ""
+    cars.forEach((car)=>{
+        let dv = document.createElement("div")
+        dv.setAttribute("class", "car")
+        if(car.tipo == "01"){
+            dv.innerHTML = `<p>${car.nome}</p><p>${car.doors} porta(s)</p>`
+        }else{
+            dv.innerHTML = `<p>${car.nome}</p><p>${car.doors} porta(s)</p><p>${car.municao} balas</p><p>${car.blindagem}%`
+        }
+        container_cars.append(dv)
+    })
+}
 
-console.log(car_m)
-console.log(car_m.get_info())
+document.getElementById("f-carros").onsubmit = ()=>{
+    let nome = document.getElementById("nome")
+    let portas = document.getElementById("portas")
+    let blindg = document.getElementById("blindg")
+    let balas = document.getElementById("balas")
+    if(!tipo){
+        cars.push(new Carro(nome.value, portas.value))
+        nome.value = portas.value = ""
+        blindg.value = balas.value = 0
+    }else{
+        cars.push(new Militar(nome.value, portas.value, blindg.value, balas.value))
+        nome.value = portas.value = blindg.value = balas.value = ""
+    }
+    add_car()
+    return false
+}
