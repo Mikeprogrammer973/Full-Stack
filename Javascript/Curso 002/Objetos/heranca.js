@@ -59,7 +59,7 @@ let cars = []
 const add_car = ()=>{
     let container_cars = document.getElementById("cars")
     container_cars.innerHTML = ""
-    cars.forEach((car)=>{
+    cars.forEach((car, i)=>{
         let dv = document.createElement("div")
         dv.setAttribute("class", "car")
         if(car.tipo == "01"){
@@ -67,8 +67,14 @@ const add_car = ()=>{
         }else{
             dv.innerHTML = `<p>${car.nome}</p><p>${car.doors} porta(s)</p><p>${car.municao} balas</p><p>${car.blindagem}%`
         }
+        dv.innerHTML += "<button id='" + i + "' class='remove' onclick = 'remove_car(`this.id`)'>Remover</button>"
         container_cars.append(dv)
     })
+}
+
+const remove_car = (i)=>{
+    cars.splice(Number(i), 1)
+    add_car()
 }
 
 document.getElementById("f-carros").onsubmit = ()=>{
