@@ -1,0 +1,56 @@
+
+*{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+section{
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 2vw;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.258);
+    background-color: rgba(128, 128, 128, 0.253);
+    padding: 20px;
+}
+section > *{
+    width: 310px;
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+}
+#tela{
+    text-align: right;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+}
+#tela > *{
+    padding: 10px 2px;
+    font-size: 1.3em;
+}
+#current-op{
+    color: dimgray;
+    font-size: .9em;
+}
+#teclas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+}
+.tecla {
+    font-weight: bold;
+    width: 62px;
+    height: 54px;
+    margin: 5px;
+    cursor: pointer;
+}
+.ctrl-op{
+    background-color: rgba(29, 112, 206, 0.459);
+    border: none;
+    border-radius: 2px;
+}
+.ctrl-op:hover{
+    background-color: rgba(29, 112, 206, 0.267);
+}
