@@ -18,10 +18,20 @@ section > *{
     background-color: white;
     padding: 10px;
 }
-#tela{
-    text-align: right;
+#titulo{
+    text-align: center;
     border-top-left-radius: 2vw;
     border-top-right-radius: 2vw;
+    background-color: black;
+    color: rgba(211, 211, 211, 0.842);
+    font: italic normal 1.3em monospace;
+    cursor: not-allowed;
+}
+#titulo:hover{
+    background-color: rgba(0, 0, 0, 0.808);
+}
+#tela{
+    text-align: right;
 }
 #tela > *{
     padding: 10px 2px;
