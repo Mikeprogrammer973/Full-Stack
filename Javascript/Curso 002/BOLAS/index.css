@@ -1,0 +1,72 @@
+
+*{
+    font-family: monospace;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body > *{
+    width: 100%;
+    margin: auto;
+}
+
+#controls{
+    background-color: lightgray;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control{
+    width: 30%;
+    text-align: center;
+    padding: 0px 10px;
+}
+.control > *{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.158);
+    border: none;
+}
+.control > input{
+    padding: 5px;
+    outline-color: gray;
+    text-align: center;
+}
+.control > button{
+    margin: 10px 0px;
+    padding: 5px;
+    outline-color: gray;
+    color: white;
+    cursor: pointer;
+}
+#btn-add{
+    background-color: rgba(0, 128, 0, 0.842);
+}
+#btn-add:hover{
+    background-color: rgba(0, 128, 0, 0.642);
+}
+#btn-remove{
+    background-color: rgba(124, 6, 6, 0.87);
+}
+#btn-remove:hover{
+    background-color: rgba(124, 6, 6, 0.67);
+}
+
+#tela{
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    background-color: whitesmoke;
+    border: 2px solid gray;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
+}
+.bola{
+    position: absolute;
+    border-radius: 100px;
+}
