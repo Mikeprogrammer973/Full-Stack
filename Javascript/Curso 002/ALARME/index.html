@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarme</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <section id="alarme">
+        <div id="data"></div>
+        <div id="hora"></div>
+        <p id="t-end-a">Hora do alarme:</p>
+        <p style="color:dimgray;"><em>Tempo(em segundos):</em></p>
+        <input type="number" id="time">
+        <p>
+            <button id="ativar" onclick="set_alarme(this)">Ativar</button>
+            <button onclick="stop_alarme()" id="parar">Parar</button>
+        </p>
+    </section>
+</body>
+</html>

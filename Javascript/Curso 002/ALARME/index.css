@@ -1,0 +1,65 @@
+*{
+    font-family: monospace!important;
+}
+
+section{
+    width: 90%;
+    border: none;
+    border-radius: 2vw;
+    padding: 20px;
+    margin: 40px auto;
+    background-color: rgba(211, 211, 211, 0.548);
+}
+
+section > *{
+    text-align: left;
+    display: block;
+    width: 300px;
+    margin: 10px auto;
+}
+section > :last-child, #hora, #data{
+    text-align: center;
+}
+
+#data{
+    color: dimgray;
+    font-size: 1.3em;
+}
+#hora{
+    background-color: rgba(4, 48, 4, 0.61);
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 1.5vw;
+}
+button{
+    padding: 10px 20px;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.195);
+    color: white;
+    cursor: pointer;
+}
+#ativar{
+    background-color: rgba(0, 128, 0, 0.836);
+}
+#ativar:hover{
+    background-color: rgba(0, 128, 0, 0.644);
+}
+#parar{
+    background-color: rgba(94, 6, 6, 0.87);
+}
+#parar:hover{
+    background-color: rgba(94, 6, 6, 0.71);
+}
+input{
+    outline-color: lightgray;
+    padding: 7px;
+}
+#t-end-a{
+    padding: 10px;
+    border-radius: 1vw;
+    background-color: rgba(3, 21, 44, 0.555);
+    color: white;
+    font-size: 1.3em;
+}

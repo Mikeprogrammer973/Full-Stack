@@ -1,4 +1,7 @@
 let op_exp = ""
+let stat_calc_a = ["rgba(182, 9, 9, 0.918)", "rgba(182, 9, 9, 0.664)"]
+let stat_calc_d = ["rgba(0, 128, 0, 0.733)", "rgba(0, 128, 0, 0.533)"]
+let on = true
 
 window.onload = ()=>{
     const teclas = ["7", "8", "9", "+", "4", "5", "6", "-", "1", "2", "3", "*", "0", ".", "=", "/", "(", ")", "CE", "X"]
@@ -11,6 +14,52 @@ window.onload = ()=>{
             tecla = `<button onclick='set_op(this)' class='tecla'>${t}</button>`
         }
         document.getElementById("teclas").innerHTML += tecla
+    })
+
+    let btn_stat = document.getElementById("calc-v-btn")
+
+    if(on){
+        btn_stat.style.backgroundColor = stat_calc_a[0]
+    }else{
+        btn_stat.style.backgroundColor = stat_calc_d[0]
+    }
+
+    btn_stat.addEventListener("mouseenter", ()=>{
+        if(on){
+            btn_stat.style.backgroundColor = stat_calc_a[1]
+        }else{
+            btn_stat.style.backgroundColor = stat_calc_d[1]
+        }
+    })
+    btn_stat.addEventListener("mouseout", ()=>{
+        if(on){
+            btn_stat.style.backgroundColor = stat_calc_a[0]
+        }else{
+            btn_stat.style.backgroundColor = stat_calc_d[0]
+        }
+    })
+    
+    btn_stat.addEventListener("click", ()=>{
+        let calc = document.getElementById("calc")
+        if(on){
+            calc.style.display = "none"
+            on = false
+            btn_stat.style.backgroundColor = stat_calc_d[0]
+        }else{
+            calc.style.display = "block"
+            on = true
+            btn_stat.style.backgroundColor = stat_calc_a[0]
+        }
+    })
+
+    document.getElementById("cpy").addEventListener("click", ()=>{
+        navigator.clipboard.writeText(document.getElementById("result").innerHTML)
+        let msg = document.getElementById("msg")
+        msg.innerHTML = "Resultado copiado para a área de transferência!"
+        msg.style.display = "block"
+        setTimeout(()=>{
+            msg.style.display = "none" 
+        }, 3000)
     })
 
 }
