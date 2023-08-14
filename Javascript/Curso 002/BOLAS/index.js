@@ -45,15 +45,17 @@ class Bola
     }
 
     static remover_all(){
-        bolas.splice(0, bolas.length)
-        document.querySelectorAll(".bola").forEach((b)=>{
-            b.remove()
+        bolas.forEach((b, i)=>{
+            clearInterval(b.ctrl)
+            b.bola.remove()
         })
+        bolas.splice(0, bolas.length)
     }
 
     remover(pos){
         bolas.splice(pos, 1)
         this.bola.remove()
+        clearInterval(this.ctrl)
     }
 
     verify_limit_event(pos){
