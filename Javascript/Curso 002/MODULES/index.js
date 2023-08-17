@@ -1,6 +1,28 @@
-//import get_all, {cursos, get_curso as take_curso} from "./cursos.js"
-import * as Cursos from "./cursos.js"
+import Contact from "./contacts.js"
+import { contacts } from "./contacts.js"
 
-console.log(Cursos.cursos)
-console.log(Cursos.default())
-console.log(Cursos.get_curso(1))
+Contact.conatiner_contact = document.getElementById("list-contacts")
+
+document.getElementById("f-add-cts").onsubmit = ()=>{
+    const els = document.getElementById("f-add-cts").elements
+
+    const ct = new Contact(els[0].value, els[1].value, els[2].value)
+    print_contacts()
+
+    els[0].value = ""
+    els[1].value = ""
+    els[2].value = ""
+
+    return false
+}
+
+const print_contacts = ()=>{
+    Contact.conatiner_contact.innerHTML = ""
+    contacts.map((ct)=>{
+        ct.print_contact()
+        ct.ref.onclick = ()=>{
+            ct.remove_contact()
+            print_contacts()
+        }
+    })
+}

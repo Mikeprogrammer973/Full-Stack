@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modules</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body > div {
+            padding: 30px;
+            width: 90%;
+            margin: auto;
+            background-color: lightgray;
+        }
+        form{
+            padding: 10px;
+        }
+        form > p > *{
+            width: 70%;
+            display: block;
+            margin: 10px auto;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline-color: lightgray;
+        }
+        button{
+            margin: 20px auto!important;
+            cursor: pointer;
+            color: white;
+            background-color: rgba(0, 128, 0, 0.836);
+        }
+        button:hover{
+            background-color: rgba(0, 128, 0, 0.636);
+        }
+        #list-contacts{
+            border-bottom-left-radius: 2vw;
+            border-bottom-right-radius: 2vw;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .contact{
+            padding: 20px;
+            border-radius: 1vw;
+            text-align: center;
+            background-color: white;
+            color: dimgray;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
+    <div id="c-f-add-cts">
+        <form action="" id="f-add-cts">
+            <p>
+                <input type="text" id="nome" placeholder="Nome" required>
+            </p>
+            <p>
+                <input type="tel" name="" id="tel" placeholder="Telefone" required>
+            </p>
+            <p>
+                <input type="email" name="" id="email" placeholder="Correio" required>
+            </p>
+            <p>
+                <button>Adicionar</button>
+            </p>
+        </form>
+        <hr>
+    </div>
+    <div id="list-contacts">
+       
+    </div>
     <script type="module" src="index.js"></script>
 </body>
 </html>
