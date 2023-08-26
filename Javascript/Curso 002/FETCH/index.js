@@ -1,5 +1,14 @@
+const header =  
+{
+    method: "POST", 
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({nome: "Mike", idade: 18})
+}
 
-fetch("http://localhost:3000/Node").then(res => res.json()).then(res=>{
-    console.log(res)
-    document.write(`<p> <strong>${res.curso}</strong> : <em>${res.info}</em> </p>`)
-})
+const gravar_dados = async ()=>{
+    const res = await fetch("http://localhost:3536/insert-user", header)
+
+    console.log(await res.json())
+}
+
+gravar_dados()
