@@ -2,10 +2,15 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 const formidable = require('formidable')
-const storage = require('./upload')
+const storage = require('./storage')
+
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}))
 
 app.get("/", (req, res)=>{
-    fs.readFile("index.html", (err, file)=>{
+    fs.readFile("form.html", (err, file)=>{
         if(err) throw err
         res.contentType(".html")
         res.status(200).send(file)
@@ -21,15 +26,31 @@ app.post("/uploadFile", (req, res)=>{
                 if(err) throw err
                 console.log(data)
                 const tipo = "." + f.mimetype.split("/")[1]
-                await storage.upload({nome: f.newFilename+tipo, data: data})
+                const uploaded_file = await storage.upload({nome: f.newFilename+tipo, data: data})
                 res.contentType(".html")
-                res.status(200).send('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><hr><span style="margin:50px;" class="alert alert-success">File uploaded!</span><hr><button style="margin:50px;" class="btn btn-dark"><a href="http://127.0.0.1:3033/">Upload new file</a></button>')
+                let content = '<link rel="stylesheet" href="style.css"><hr><span style="margin:50px;" class="alert-success">File uploaded!</span><hr><button style="margin:50px;"><a href="http://127.0.0.1:5500/Lab/Upload%20to%20Mega%20server/index.html">Voltar</a></button>'
+                //const dwn_file = f.filepath.substring(0, f.filepath.indexOf(f.newFilename)) + uploaded_file
+                //fs.writeFileSync(dwn_file, await storage.download(uploaded_file))
+                res.status(200).send(content)
             })
         })
     }else{
         res.status(404)
         res.end()
     }
+})
+
+app.get("/getFiles", async (req, res)=>{
+    let files = []
+    const all = await storage.get_all_files()
+    await all.map( async file => {
+        if(!fs.existsSync("C:/Teste")) fs.mkdirSync("C:/Teste")
+        const dir_file = `C:/Teste/${file.name}`
+        files.push(dir_file)
+        fs.writeFileSync(dir_file, await storage.download(file.name))
+        console.log(files)
+    })
+    res.status(200).json(files)
 })
 
 app.listen(3033, ()=> console.log("Server running..."))
