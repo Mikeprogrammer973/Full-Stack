@@ -3,8 +3,10 @@ const app = express()
 const fs = require('fs')
 const formidable = require('formidable')
 const storage = require('./storage')
+const url = require('url')
 
 const cors = require('cors');
+const { setTimeout } = require('timers/promises')
 app.use(cors({
     origin: '*'
 }))
@@ -41,16 +43,49 @@ app.post("/uploadFile", (req, res)=>{
 })
 
 app.get("/getFiles", async (req, res)=>{
-    let files = []
+    var files = []
+    var names = []
     const all = await storage.get_all_files()
-    await all.map( async file => {
-        if(!fs.existsSync("C:/Teste")) fs.mkdirSync("C:/Teste")
-        const dir_file = `C:/Teste/${file.name}`
-        files.push(dir_file)
-        fs.writeFileSync(dir_file, await storage.download(file.name))
-        console.log(files)
-    })
+    if(typeof(all) != "undefined"){
+        //console.log(all)
+        async function converter()
+        {
+            await all.map( async (file, i) => {
+                const btmap = await storage.download(file.name)
+                names.push(file.name)
+                files.push(btmap.toString('base64'))
+                if(i == all.length-1){
+                    let filtro = []
+                    files.map( async f => {
+                        if(filtro.indexOf(f) > -1){
+                            files = filtro = names = []
+                            await converter()
+                            return
+                        }else{
+                            filtro.push(f)
+                        }
+                    })
+                    if(files.length < all.length || files.length > all.length){
+                        files = filtro = names = []
+                        await converter()
+                    }else{
+                        console.log(names)
+                        res.status(200).json({0: files, 1: names})
+                    }
+                }
+            })
+        }
+        await converter()
+        return
+    }
     res.status(200).json(files)
+})
+
+app.get("/deleteFile", async (req, res)=>{
+    const prms = url.parse(req.url, true).query
+    console.log(prms.file_name)
+    await storage.delete_file(prms.file_name)
+    res.end(prms.file_name)
 })
 
 app.listen(3033, ()=> console.log("Server running..."))

@@ -32,7 +32,7 @@ var current_folder = null
     //const folder_teste = await folder_cd.mkdir("Teste")
     //console.log("Folder Teste created!")
     //const folder_teste = folder_cd.children[1]
-    current_folder  = folder_cd.children[1]
+    current_folder  = folder_cd.children[1] 
     //;(await current_folder.downloadBuffer()).readBigInt64BE()
     console.log("No ./Cloud Drive/Teste/")
     //await folder_teste.upload('hello-world.txt', 'index.js').complete
@@ -57,6 +57,13 @@ const upload = async prms=>{
     return prms.nome
 }
 
+const delete_file = async file_name =>{
+  const file = current_folder.children.find(file=> file.name === file_name)
+  if(file != "undefined"){
+    await file.delete(true)
+  }
+}
+
 const get_all_files = async ()=>{
   return current_folder.children
 }
@@ -69,4 +76,4 @@ const download = async file_name =>{
   }
 }
 
-module.exports = {upload, download, get_all_files}
+module.exports = {upload, download, get_all_files, delete_file}

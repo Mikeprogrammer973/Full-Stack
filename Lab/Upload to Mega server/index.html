@@ -13,18 +13,29 @@
     <div id="c-files"></div>
     <script>
 
-        fetch("http://localhost:3033/getFiles").then(res => res.json()).then(res =>{
-            const container = document.getElementById("c-files")
-            container.innerHTML = ""
-            console.log(res)
-            res.map(file =>{
-                container.innerHTML += `<object data='${file}' id='${file.split("/")[2]}'></object>`
+        function get_all(){
+            fetch("http://localhost:3033/getFiles").then(res => res.json()).then(res =>{
+                const container = document.getElementById("c-files")
+                container.innerHTML = ""
+                console.log(res[1])
+                res[0].map((file,i) =>{
+                    container.innerHTML += `<object onclick='remove_file(this)' data='data:image/PNG; base64,${file}' id='${res[1][i]}'></object>`
+                })
             })
-        })
+        }
 
         function Upload(){
             fetch("http://localhost:3033/").then(res => res.text()).then(res => document.write(res))
         }
+
+        function remove_file(c_file){
+            fetch("http://localhost:3033/deleteFile/?file_name="+c_file.id).then(res => res.text()).then(res => {
+                alert(`O arquivo ${res} foi deletado do Mega!`)
+                get_all()
+            })
+        }
+
+        get_all()
     </script>
 </body>
 </html>
