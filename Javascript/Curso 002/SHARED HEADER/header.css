@@ -1,0 +1,25 @@
+@charset "utf8";
+
+#header{
+    padding: 20px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+#logo_img{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+}
+
+#title_{
+    color:dimgray;
+    font-variant: small-caps;
+    letter-spacing: .5em;
+    padding: 10px;
+
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chartjs</title>
+</head>
+<body>
+    <div style="max-width: 600px;max-height: 600px; margin: auto;">
+        <canvas id="myChart"></canvas>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+        
+        let graph_ = new Chart(ctx, {
+            type: 'pie',
+            data: {
+            labels: ['Disponiblidade', 'Qualidade', 'Performance'],
+            datasets: [{
+                label: '# of Votes',
+                data: [0, 0, 0],
+                borderWidth: 1,
+                //backgroundColor: "skyblue",
+                //borderColor: "darkgreen"
+            }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        })
+
+        const update_graph_ = ()=>{
+            fetch("https://teste.mikeprogrammer9.repl.co").then(res => res.json()).then(res => {
+                graph_.data.datasets[0].data = [res.disponibilidade, res.qualidade, res.performance]
+                graph_.update()
+            }).catch(err => {
+                console.debug(err)
+            })
+        }
+        
+        setInterval(update_graph_, 2000)
+    </script>
+      
+</body>
+</html>
