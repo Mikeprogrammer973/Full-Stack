@@ -35,3 +35,12 @@ function food(f: Food){
 }
 
 console.log(food(Food.Cheeseburger))
+
+let valor: unknown 
+valor = true
+valor = 79
+valor = []
+valor = {}
+valor = "Here's Go!"
+
+console.log(valor)
