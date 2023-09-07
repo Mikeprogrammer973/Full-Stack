@@ -68,3 +68,34 @@ interface Cat {
 }
 
 type animal = Dog & Cat
+
+// Generic Objects
+type User = {
+    name: string,
+    email: string
+}
+
+type Admin = {
+    name: string,
+    email: string,
+    admin: true
+}
+
+const user: User = {
+    name: "Katalina Ramos",
+    email: "kataramos002@gmail.com"
+}
+
+const adm: Admin = {
+    name: "Sabrina Ramos",
+    email: "sabiramos002@gmail.com",
+    admin: true
+}
+
+function access_system<T>(user: T): T
+{
+    return user
+}
+
+console.log(access_system<User>(user))
+console.log(access_system<Admin>(adm))
