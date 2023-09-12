@@ -1,6 +1,14 @@
 namespace Fabrica
 {
-    abstract class Standar 
+    interface Control
+    {
+        mover(): void,
+        parar(): void, 
+        distance: number,
+        get _distance(): number
+    }
+
+    abstract class Standar
     {
         readonly ligado: boolean = false
         static qtd_doors: number = 0
@@ -8,7 +16,7 @@ namespace Fabrica
         desligar(){}
     }
 
-    export class Car implements Standar
+    export class Car extends Standar implements Control
     {
         private nome: string
         readonly ano: number
@@ -16,12 +24,15 @@ namespace Fabrica
         static qtd_doors: number = 4
         ligado: boolean = false
         static confecionnaria_nome: string = "Techno-X-Cars"
+        distance: number
 
         constructor(nome: string, ano: number)
         {
+            super()
             this.nome = nome
             this.ano = ano
             this.tipo = "Standar"
+            this.distance = 0
         }
 
         public print_details()
@@ -45,6 +56,23 @@ namespace Fabrica
 
         desligar(): void {
             this.ligado = false
+        }
+
+        mover(): void
+        {
+            this.ligar()
+            this.distance += 100
+            console.log(`\nO carro se moveu de ${this.distance} metros.\n`)
+        }
+
+        parar(): void {
+            console.log("Epa! O carro parou.")
+            this.desligar()
+        }
+
+        get _distance(): number
+        {
+            return this.distance
         }
 
     }
@@ -77,5 +105,6 @@ console.log(Fabrica.CarMilitar.confecionnaria_nome)
 console.log(car_mlt.print_details())
 console.log(car_mlt.get_municao())
 console.log(car_mlt.ligado)
-car_mlt.ligar()
+car_mlt.mover()
+car_mlt.parar()
 console.log(car_mlt.ligado)
