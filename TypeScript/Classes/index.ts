@@ -108,3 +108,24 @@ console.log(car_mlt.ligado)
 car_mlt.mover()
 car_mlt.parar()
 console.log(car_mlt.ligado)
+
+interface Funcionario {
+    id: number,
+    nome: string,
+    salario: number
+}
+
+interface Developer extends Omit<Funcionario, 'id' | 'salario'>{
+    id: string,
+    dev_language: string,
+    salario: string
+}
+
+const dev: Developer = {
+    id: 'TP-007-009',
+    nome: 'Sabrina Lopes',
+    dev_language: 'Java',
+    salario: '5k'
+}
+
+console.log(`\n\n${dev.nome}\n\n`)
