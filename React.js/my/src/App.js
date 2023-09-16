@@ -7,12 +7,14 @@ function App() {
     <>
       <components.Btn text={"Start"}/>
       <hr></hr>
-      <components.Task name={"Learn Node.js"} isDone={true}/>
-      <components.Task name={"Learn JavaScript"} isDone={true}/>
-      <components.Task name={"Learn TypeScript"} isDone={false}/>
-      <components.Task name={"Learn React"} isDone={false}/>
-      <components.Task name={"Learn C#"} isDone={true}/>
-      <components.Task name={"Learn Saass"} isDone={false}/>
+      <components.Container>
+        <components.Task name={"Learn Node.js"} isDone={true}/>
+        <components.Task name={"Learn JavaScript"} isDone={true}/>
+        <components.Task name={"Learn TypeScript"} isDone={false}/>
+        <components.Task name={"Learn React"} isDone={false}/>
+        <components.Task name={"Learn C#"} isDone={true}/>
+        <components.Task name={"Learn Saass"} isDone={false}/>
+      </components.Container>
     </>
   );
 }

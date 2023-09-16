@@ -10,10 +10,17 @@ function Button({text})
   )
 }
 
+function Container({children})
+{
+  return(
+    <div className='container'> {children} </div>
+  )
+}
+
 function Task({name, isDone})
 {
     return(
-        <li className={isDone?"alert alert-success":"alert alert-warning"}>
+        <li style={{fontSize: '1.4em'}} className={isDone?"alert alert-success":"alert alert-warning"}>
             {name}
         </li>
     )
@@ -21,7 +28,8 @@ function Task({name, isDone})
 
 const components = {
     "Btn": Button,
-    "Task": Task
+    "Task": Task,
+    "Container": Container
 }
 
 export default components
