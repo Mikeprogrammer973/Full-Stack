@@ -15,6 +15,12 @@ function App() {
         <components.Task name={"Learn C#"} isDone={true}/>
         <components.Task name={"Learn Saass"} isDone={false}/>
       </components.Container>
+      <components.Container>
+        <components.Gallery/>
+      </components.Container>
+      <components.Container>
+        <components.Counter/>
+      </components.Container>
     </>
   );
 }
