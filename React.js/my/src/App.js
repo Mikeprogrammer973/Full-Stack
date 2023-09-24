@@ -6,6 +6,7 @@ function App() {
   return (
     <>
       <components.Btn text={"Start"}/>
+      <components.Horloge/>
       <hr></hr>
       <components.Container>
         <components.Task name={"Learn Node.js"} isDone={true}/>

@@ -107,12 +107,24 @@ function Gallery() {
   )
 }
 
+function Horloge()
+{
+  const [data, setData] = useState(new Date().toLocaleTimeString())
+
+  setInterval(()=>{
+    setData(new Date().toLocaleTimeString())
+  }, 1000)
+  
+  return <button className='btn btn-light'>{data}</button>
+}
+
 const components = {
     "Btn": Button,
     "Task": Task,
     "Container": Container,
     "Gallery": Gallery,
-    "Counter": Counter
+    "Counter": Counter,
+    "Horloge": Horloge
 }
 
 export default components
