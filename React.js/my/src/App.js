@@ -5,7 +5,15 @@ import { useState } from 'react';
 
 function App() {
 
-  const [nome, setNome] = useState('')
+  //const [nome, setNome] = useState('')
+  const [form, setForm] = useState({"nome":"Maria", "curso":"Node", "ano":"2021"})
+
+  function handleChange(e)
+  {
+    if(e.target.getAttribute('name') == 'nome') setForm({"nome":e.target.value, "curso":form.curso, "ano":form.ano})
+    if(e.target.getAttribute('name') == 'curso') setForm({"nome":form.nome, "curso":e.target.value, "ano":form.ano})
+    if(e.target.getAttribute('name') == 'ano') setForm({"nome":form.nome, "curso":form.curso, "ano":e.target.value})
+  }
 
   return (
     <>
@@ -15,9 +23,12 @@ function App() {
 
       <components.Container>
         <form>
-          <input 
-            onChange={(e)=>{setNome(e.target.value)}} value={nome} className='form-control' type='text' placeholder='seu nome...' name='ipt-nome'></input>
-          <p>Nome digitado: {nome}</p>
+          <input onChange={(e)=>handleChange(e)} value={form.nome} className='form-control' type='text' placeholder='Nome...' name='nome'/>
+          <input onChange={(e)=>handleChange(e)} value={form.curso} className='form-control' type='text' placeholder='Curso...' name='curso'/>
+          <input onChange={(e)=>handleChange(e)} value={form.ano} className='form-control' type='number' placeholder='Ano...' name='ano'/>
+          <p>Nome digitado: {form.nome}</p>
+          <p>Curso digitado: {form.curso}</p>
+          <p>Ano digitado: {form.ano}</p>
         </form>
       </components.Container>
     </>
