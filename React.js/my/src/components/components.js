@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { sculptureList } from '../utils/data';
 
-
 function Button({text})
 {
   function handleClick()
@@ -118,13 +117,32 @@ function Horloge()
   return <button className='btn btn-light'>{data}</button>
 }
 
+function NotaCampo(props)
+{
+  return (
+    <>
+      <input onChange={(e)=>{props.handleSetNotas(e)}} value={props.nota} num={props.num} type='number'className='form-control' placeholder={"Nota " + props.num} />
+    </>
+  )
+}
+
+function NotaFinal({notas})
+{
+  console.log(notas)
+  let soma = 0
+  notas.map(n=>soma+=Number(n))
+  let status = soma >= 60 ? true : false
+  return <p>Total: {soma} <strong style={status?{color:"green"}:{color:"red"}}>{status?"APROVADO(A)":"REPROVADO(A)"}</strong></p>
+}
+
 const components = {
     "Btn": Button,
     "Task": Task,
     "Container": Container,
     "Gallery": Gallery,
     "Counter": Counter,
-    "Horloge": Horloge
+    "Horloge": Horloge,
+    "Pronote": {"NovaNota": NotaCampo, "SomaNotaFinal": NotaFinal}
 }
 
 export default components
