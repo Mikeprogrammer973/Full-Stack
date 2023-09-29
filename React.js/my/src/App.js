@@ -2,6 +2,7 @@
 import './App.css';
 import components from './components/components';
 import Classe from './components/classe';
+import Carro from './components/carro';
 import { useState, useEffect } from 'react';
 
 /*
@@ -63,7 +64,8 @@ function App()
   return(
     <>
       <h1>Componentes de Classes</h1>
-      <Classe canal="Cine Movies"/>
+      <Classe canal="Cine Movies" curso="Curso de Fotografia"/>
+      <Carro fator={7} canal="Web Hacker" curso="Curso de ReactJS"/>
     </>
   )
 }

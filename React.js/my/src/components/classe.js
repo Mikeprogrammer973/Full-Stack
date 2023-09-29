@@ -12,6 +12,7 @@ class Classe extends React.Component
             <>
                 <h3>Primeiro Componente de Classe</h3>
                 <p>Canal: {this.props.canal}</p>
+                <p>Curso: {this.props.curso}</p>
             </>
         )
     }
