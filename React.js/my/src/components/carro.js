@@ -44,6 +44,16 @@ class Carro extends React.Component
             )
     }
 
+    componentDidMount()
+    {
+        console.log("O carro foi criado!")
+    }
+
+    componentDidUpdate()
+    {
+        console.log("O carro foi atualizado!")
+    }
+
     render()
     {
         return(
