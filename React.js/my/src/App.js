@@ -6,10 +6,57 @@ import Page002 from './components/page002';
 import Page003 from './components/page003';
 import { useState, useEffect } from 'react';
 
+const carros = [
+  {categoria: "Esporte", preco: 154700, modelo: "Golg HIU"},
+  {categoria: "Esporte", preco: 5874900, modelo: "Ferrari"},
+  {categoria: "Casual", preco: 40000, modelo: "Honda"},
+  {categoria: "SUV", preco: 584120, modelo: "Mercedes"},
+  {categoria: "Casual", preco: 85000, modelo: "HRV"},
+  {categoria: "SUV", preco: 96000, modelo: "T-Cross"},
+  {categoria: "Casual", preco: 125400, modelo: "Ranger"},
+  {categoria: "Esporte", preco: 258000, modelo: "Hilux Premium"},
+  {categoria: "Esporte", preco: 548000, modelo: "Toyota"},
+  {categoria: "SUV", preco: 58000, modelo: "Go"},
+  {categoria: "Casual", preco: 63000, modelo: "Camaro"},
+  {categoria: "Esporte", preco: 4967200, modelo: "Mercedes"}
+]
+
+
+function tableCars(cat)
+{
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carros.map(car => {
+          if(car.categoria == cat)
+          {
+            return (
+              <tr>
+                <td>{car.categoria}</td>
+                <td>R$ {car.preco}</td>
+                <td>{car.modelo}</td>
+              </tr>
+            )
+          }
+        })}
+      </tbody>
+    </table>
+  )
+}
+
 function App()
 {
 
   const [page, setPage] = useState(0)
+
+  const [cat, setCat] = useState('Esporte')
 
   function handlePageChange(page)
   {
@@ -22,7 +69,9 @@ function App()
     {
       return(
         <>
-          <h1>---Welcome HOME---</h1>
+          <input type='text' value={cat} placeholder='Categoria...' onChange={(e)=>setCat(e.target.value)} className='form-control' />
+          <hr/>
+          {tableCars(cat)}
         </>
       )
     }

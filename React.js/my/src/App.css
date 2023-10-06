@@ -16,3 +16,11 @@ input{
   width: auto!important;
   margin: 5px!important;
 }
+
+td, th{
+  border-collapse: collapse;
+  border: 1px solid gray;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
