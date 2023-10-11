@@ -4,7 +4,9 @@ import Components from './components/components';
 import Page001 from './components/page001';
 import Page002 from './components/page002';
 import Page003 from './components/page003';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
+//import {Routes, Route, Link} from 'react-router-dom'
+import IMCCalc from './components/IMC';
 
 const carros = [
   {categoria: "Esporte", preco: 154700, modelo: "Golg HIU"},
@@ -87,6 +89,10 @@ function App()
     {
       return <Page003/>
     }
+    if(page == 4)
+    {
+      return <IMCCalc/>
+    }
   }
 
   return(
@@ -95,10 +101,11 @@ function App()
         {getPage()}
       </Components.Container>
       <Components.Container>
-      <button className='Btn btn btn-success' onClick={()=>handlePageChange(0)}>Home</button>
+        <button className='Btn btn btn-success' onClick={()=>handlePageChange(0)}>Home</button>
         <button className='Btn btn btn-primary' onClick={()=>handlePageChange(1)}>Página 1</button>
         <button className='Btn btn btn-primary' onClick={()=>handlePageChange(2)}>Página 2</button>
         <button className='Btn btn btn-primary' onClick={()=>handlePageChange(3)}>Página 3</button>
+        <button className='Btn btn btn-primary' onClick={()=>handlePageChange(4)}>Calcular IMC</button>
       </Components.Container>
     </>
   )
