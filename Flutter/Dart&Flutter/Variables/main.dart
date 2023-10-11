@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   // Produtos
 
@@ -57,6 +59,30 @@ void main() {
     default:
       print('__ $num __');
   }
+
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      print('$i$j');
+    }
+  }
+
+  int count = 0;
+  while (count < 7) {
+    print(count);
+    count++;
+  }
+
+  bool found = false;
+  do {
+    int val = Random().nextInt(100) + 7;
+    if (val % 2 == 0) {
+      found = true;
+      print('Sim, assim é...');
+    } else {
+      found = false;
+      print('Acabou a sorte...');
+    }
+  } while (found);
 }
 
 String check_num(int num) {
