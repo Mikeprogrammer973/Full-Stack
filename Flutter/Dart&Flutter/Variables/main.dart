@@ -32,9 +32,9 @@ void main() {
   print(
       'O produto $codigo é um $nome e o seu preço é $preco reais.\nEn promotion: ${(desconto ? 'Oui' : 'Non')}');
 
-  print(check_num(7));
-  print(check_num(456));
-  print(check_num(251));
+  print(check_num(num: 7));
+  print(check_num(num: 456));
+  print(check_num(num: 251));
 
   if (0 > 9 && 7 > 9) {
     print('OK 1');
@@ -85,7 +85,7 @@ void main() {
   } while (found);
 }
 
-String check_num(int num) {
+String check_num({int num = 2}) {
   if (num % 2 != 0) {
     return '$num é um mumero impar!';
   }
