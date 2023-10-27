@@ -4,6 +4,9 @@ void main() {
   person.printInfo();
   person.name = 'Peter';
   print(person.name);
+
+  Father father = new Father('Floriano', 45, '458-8596-895', 'Charpenter');
+  father.printInfo();
 }
 
 class Person {
@@ -27,5 +30,20 @@ class Person {
     print('Name: ${this.name}');
     print('Age: ${this.age}');
     print('Tel: ${this.tel}');
+  }
+}
+
+class Father extends Person {
+  String profession = '';
+
+  Father(String name, int age, String tel, this.profession)
+      : super(name, age, tel);
+
+  @override
+  void printInfo() {
+    print('Name: ${this.name}');
+    print('Age: ${this.age}');
+    print('Tel: ${this.tel}');
+    print('Profession: ${this.profession}');
   }
 }
