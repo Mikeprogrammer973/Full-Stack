@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   // Produtos
 
@@ -30,9 +32,9 @@ void main() {
   print(
       'O produto $codigo é um $nome e o seu preço é $preco reais.\nEn promotion: ${(desconto ? 'Oui' : 'Non')}');
 
-  print(check_num(7));
-  print(check_num(456));
-  print(check_num(251));
+  print(check_num(num: 7));
+  print(check_num(num: 456));
+  print(check_num(num: 251));
 
   if (0 > 9 && 7 > 9) {
     print('OK 1');
@@ -57,9 +59,33 @@ void main() {
     default:
       print('__ $num __');
   }
+
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      print('$i$j');
+    }
+  }
+
+  int count = 0;
+  while (count < 7) {
+    print(count);
+    count++;
+  }
+
+  bool found = false;
+  do {
+    int val = Random().nextInt(100) + 7;
+    if (val % 2 == 0) {
+      found = true;
+      print('Sim, assim é...');
+    } else {
+      found = false;
+      print('Acabou a sorte...');
+    }
+  } while (found);
 }
 
-String check_num(int num) {
+String check_num({int num = 2}) {
   if (num % 2 != 0) {
     return '$num é um mumero impar!';
   }
