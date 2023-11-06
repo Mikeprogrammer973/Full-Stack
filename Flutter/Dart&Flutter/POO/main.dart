@@ -7,6 +7,39 @@ void main() {
 
   Father father = new Father('Floriano', 45, '458-8596-895', 'Charpenter');
   father.printInfo();
+
+  World.gravity = 89.87;
+  print(World.gravity);
+
+  const int a = 1; //Coisas fixas - que jà conhecemos
+  //a++;
+  print(a);
+
+  final DateTime date = new DateTime.now();
+  //Coisas de fora - que ainda desconhecemos
+  //date = new DateTime.timestamp();
+  print(date.toString());
+
+  Player player = new Player(7, 85, 'Big Hero X');
+  player.show();
+}
+
+abstract class Character {
+  int posX = 0;
+  int posY = 0;
+  String name = "";
+  Character(this.posX, this.posY, this.name);
+  void show() {
+    print('Your player is located at position $posX e $posY');
+  }
+}
+
+class Player extends Character {
+  Player(int posX, int posY, String name) : super(posX, posY, name);
+}
+
+class World {
+  static double gravity = 54.89;
 }
 
 class Person {
