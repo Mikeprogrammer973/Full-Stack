@@ -6,7 +6,7 @@ const connect = async ()=>{
     const mysql = require('mysql2/promise')
     const connection = mysql.createConnection("mysql://root:@localhost/curso_node")
     //console.log('Conectado ao banco...')
-    global.db_connection = connection
+    global.connection = connection
     return connection
 }
 
