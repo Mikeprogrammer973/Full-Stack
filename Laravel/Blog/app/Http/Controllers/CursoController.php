@@ -13,10 +13,12 @@ class CursoController extends Controller
         $cursos = Curso::orderBy("id", "desc")->paginate();
         return view("cursos.index", compact("cursos"));
     }
+
     public function create()
     {
         return view("cursos.create");
     }
+
     public function store(StoreCurso $request)
     {
         /*$curso = new Curso();
@@ -31,15 +33,18 @@ class CursoController extends Controller
 
         return redirect()->route("cursos.show", $curso->id);
     }
+
     public function show(Curso $curso)
     {
         //return view("cursos.show", ["curso" => $curso]);
         return view("cursos.show", compact("curso"));
     }
+    
     public function edit(Curso $curso)
     {
         return view("cursos.edit", compact("curso"));
     }
+
     public function update(Curso $curso, Request $request)
     {
         $request->validate([
@@ -57,5 +62,12 @@ class CursoController extends Controller
         $curso->update($request->all());
 
         return redirect()->route("cursos.show", $curso->id);
+    }
+
+    public function destroy(Curso $curso)
+    {
+        $curso->delete();
+
+        return redirect()->route("cursos.index");
     }
 }
