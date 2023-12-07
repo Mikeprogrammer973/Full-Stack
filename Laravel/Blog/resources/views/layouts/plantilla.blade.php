@@ -6,16 +6,20 @@
     <title>@yield('title')</title>
     <!--<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel=" stylesheet" />-->
     <!--favicon-->
-    <!--estilos-->
+    <style>
+        .active{
+            color: green;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
-    <!--header-->
-    <!--nav-->
+
+    @include('layouts.partials.header')
 
     @yield('content')
 
-    <!--footer-->
+    @include('layouts.partials.footer')
 
-    <!--script-->
 </body>
 </html>
