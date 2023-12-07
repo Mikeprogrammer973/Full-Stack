@@ -5,7 +5,7 @@
 
 @section('content')
     <h1>En esta pagina podrás editar un curso!</h1>
-    <form action={{route("cursos.update", $curso->id)}} method="post">
+    <form action={{route("cursos.update", $curso)}} method="post">
 
         @csrf
         @method('put')
@@ -16,6 +16,18 @@
         </label>
 
         @error('name')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+        @enderror
+
+        <br><br>
+        <label>
+            Slug: <br>
+            <input type="text" name="slug" value={{old('slug', $curso->slug)}}>
+        </label>
+
+        @error('slug')
             <br>
             <span>*{{$message}}</span>
             <br>
