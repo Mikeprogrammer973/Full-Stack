@@ -10,15 +10,17 @@ use Illuminate\Queue\SerializesModels;
 class ContactanosMailable extends Mailable
 {
     use Queueable, SerializesModels;
+    
+    public $prms;
 
     /**
      * Create a new message instance.
      *
      * @return void
-     */
-    public function __construct()
+    */
+    public function __construct($prms)
     {
-        //
+        $this->prms = $prms;
     }
     
     /**
@@ -29,7 +31,7 @@ class ContactanosMailable extends Mailable
     public function build()
     {
         return $this
-                    //->from('technopro.net@gmail.com', "TechnoPro Administration")
+                    //->from($this->prms["correo"], $this->prms["nombre"])
                     ->subject("Información de contato")
                     ->view('emails.contactanos');
     }
