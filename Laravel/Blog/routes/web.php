@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,13 @@ Route::get('/', HomeController::class)->name("home");
 Route::resource("assignaturas", CursoController::class)->names("cursos")->parameters(["assignaturas" => "curso"]);
 
 Route::view("nosotros", "nosotros")->name("nosotros");
+
+Route::get("contactanos", function(){
+
+    Mail::to("antiquesclub007@gmail.com")->send(new ContactanosMailable);
+    return "Mensaje enviado!";
+    
+})->name("contactanos");
 
 /*Route::controller(CursoController::class)->group(function(){
     Route::get("cursos", "index")->name("cursos.index");
