@@ -30,5 +30,20 @@
             <div class="bg-orange-900">9</div>
         </div>
     </div>
+    <hr>
+    <div class="container py-12">
+        <div class="grid grid-cols-3 gap-6">
+            <div class="col-span-2">
+                <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/r1ySsbIA7EU?si=Bowgk-u4fyVjuVt_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            
+                <div class="bg-red-400 aspect-[2/1]">
+
+                </div>
+            </div>
+            <div class="bg-blue-700">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
