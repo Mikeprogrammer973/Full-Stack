@@ -7,9 +7,22 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
+
+            @php
+                $type = 'warning'
+            @endphp
+           
+            <x-alert2 :type='$type' id="alerta" class="my-7">
+
+                <x-slot name="title">
+                    Notificación del sistema
+                </x-slot>
+
+                <p>Algo está andando muy mal!</p>
+            </x-alert2>
+
+            <x-jet-welcome />
+
         </div>
     </div>
 </x-app-layout>
