@@ -22,7 +22,18 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get("prueba", function(){
+        return "Has accedido correctamente a esta ruta!";
+    })->middleware('age');
+
 });
+
+
+Route::get("no-autorizado", function(){
+    return "Usted no es autorizado a acceder esta ruta!";
+})->name("no-autorizado");
