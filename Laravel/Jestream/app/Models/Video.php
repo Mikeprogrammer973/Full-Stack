@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Video extends Model
 {
     use HasFactory;
 
-    // Relation un à plusieurs
-    public function posts()
+    // Relations un à plusieurs inverse
+    public function user()
     {
-        return $this->hasMany('App\Models\Post');
+        return $this->belongsTo('App\Models\User');
     }
 }
