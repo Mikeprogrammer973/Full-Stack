@@ -29,5 +29,17 @@ for user, status in users.copy().items():
         del users[user]
 
 print("\n\n {} \n".format(users))
+
+
+# comando break
+
+for number in range(2, 100):
+    for x in range(2, number):
+        if number % x == 0:
+            print('{} equals {} * {}'.format(number, x , number // x))
+            break
+        else:
+            print('{} is a prime number'.format(number))
+            break
         
 
