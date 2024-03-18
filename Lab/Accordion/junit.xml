@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="8" errors="0" time="6.762">
+  <testsuite name="accordion test" errors="0" failures="8" skipped="0" timestamp="2024-03-17T19:34:24" time="6.681" tests="8">
+    <testcase classname="accordion test shows the 1st item description expanded by default" name="accordion test shows the 1st item description expanded by default" time="1.628">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;description&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:34:37)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="accordion test expands the item description when clicking on a title of collapsed element" name="accordion test expands the item description when clicking on a title of collapsed element" time="0.524">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;description&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:45:37)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="accordion test shows expand icon when item is collapsed" name="accordion test shows expand icon when item is collapsed" time="0.423">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;expand-icon&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:62:32)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="accordion test shows collapse icon when item is expanded" name="accordion test shows collapse icon when item is expanded" time="0.357">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;collapse-icon&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:83:38)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="accordion test collapses the item description when clicking on title of expanded item" name="accordion test collapses the item description when clicking on title of expanded item" time="0.374">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;description&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:106:33)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="accordion test collapses all expanded elements when expanding an another item" name="accordion test collapses all expanded elements when expanding an another item" time="0.301">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;description&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:119:34)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="accordion test expands more than one item if multi-select is enabled" name="accordion test expands more than one item if multi-select is enabled" time="0.341">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;description&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:146:34)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="accordion test collapses all other items when expanding an item after multi-select has beem disabled" name="accordion test collapses all other items when expanding an item after multi-select has beem disabled" time="0.302">
+      <failure>Error: expect(element).not.toBeVisible()
+
+Received element is visible:
+  &lt;div class=&quot;description&quot; /&gt;
+    at Object.toBeVisible (/projects/challenge/test/test.js:177:34)
+    at Promise.then.completed (/projects/challenge/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/challenge/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/projects/challenge/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/projects/challenge/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/projects/challenge/node_modules/jest-circus/build/run.js:121:9)
+    at run (/projects/challenge/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/projects/challenge/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/projects/challenge/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/projects/challenge/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
