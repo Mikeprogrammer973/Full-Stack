@@ -53,4 +53,4 @@ async function get_nums(file) {
   }
 }
  
-get_nums('./Lab/Msg 001/nums.txt')
+get_nums('./nums.txt')
