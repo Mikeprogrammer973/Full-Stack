@@ -5,8 +5,8 @@ var current_folder = null
 // Node doesn't support top-level await when using CJS
 ;(async function () {
   const storage = new Storage({
-    email: 'mikepascal.delta@gmail.com',
-    password: '#Inazuma15'
+    email: process.env.MAIL,
+    password: process.env.PASS
   })
 
   // Will resolve once the user is logged in
