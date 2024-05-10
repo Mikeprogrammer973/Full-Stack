@@ -11,7 +11,7 @@ public class BoletimEstudantil
             {
                 if(media >= 9.5)
                 {
-                    System.err.print("APROVADO COM EXCELÊNCIA");
+                    System.out.print("APROVADO COM EXCELÊNCIA");
                 }
                 else
                 {
