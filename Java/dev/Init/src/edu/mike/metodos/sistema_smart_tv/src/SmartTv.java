@@ -1,5 +1,13 @@
 package edu.mike.metodos.sistema_smart_tv.src;
 
+/**
+* Sisteminha básica de SmartTV
+* 
+* @author Mike D. Pascal
+* @version 1.0
+* @since 2024-05-14
+*/
+
 public class SmartTv {
     boolean ligada = false;
     int canal = 7;
@@ -16,8 +24,14 @@ public class SmartTv {
             canal--;
     }
 
+    /**
+    * Serve para mudar o canal para uma selecionada
+    * @param canal este é o canal desejado
+    * @return void
+    */
     public void selecionarCanal(int canal)
     {
+        
         this.canal = canal;
     }
 
