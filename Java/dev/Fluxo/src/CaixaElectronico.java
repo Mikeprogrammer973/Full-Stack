@@ -13,6 +13,10 @@ public class CaixaElectronico {
         {
             saldo -= valorSolicitado;
         }
+        else
+        {
+            System.out.println("\nSaldo insuficiente!\n");
+        }
 
         System.out.println("\nSaldo atual: " + saldo + "\n");
     }
