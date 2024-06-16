@@ -5,13 +5,14 @@ import com.pronote.school.util.enums.*;
 
 public class School {
     public static void main(String[] args) throws Exception {
-        Student student = new Student();
+        Student student = new Student(Estado.SANTA_CATARINA);
 
         student.sex = Sex.FEMALE;
         student.color = Color.UNKNOW;
-        student.name = "Maria Oh";
-        student.age = 19;
+        student.setName("Maria Oh");
+        student.setAge(24);
 
-        System.out.println(student.name);
+        System.out.println(student.getName());
+        System.out.println(student.getEstado().getNomeMaiusculo());
     }
 }
